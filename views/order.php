@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- Important to make website responsive -->
@@ -23,13 +24,13 @@
             <div class="menu text-right">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="categories.html">Categories</a>
+                        <a href="categories.php">Categories</a>
                     </li>
                     <li>
-                        <a href="foods.html">Foods</a>
+                        <a href="foods.php">Foods</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -45,7 +46,7 @@
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search">
         <div class="container">
-            
+
             <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
 
             <form action="#" class="order">
@@ -55,18 +56,18 @@
                     <div class="food-menu-img">
                         <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
                     </div>
-    
+
                     <div class="food-menu-desc">
                         <h3>Food Title</h3>
                         <p class="food-price">$2.3</p>
 
                         <div class="order-label">Quantity</div>
                         <input type="number" name="qty" class="input-responsive" value="1" required>
-                        
+
                     </div>
 
                 </fieldset>
-                
+
                 <fieldset>
                     <legend>Delivery Details</legend>
                     <div class="order-label">Full Name</div>
@@ -95,13 +96,13 @@
         <div class="container text-center">
             <ul>
                 <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
                 </li>
             </ul>
         </div>
@@ -117,4 +118,5 @@
     <!-- footer Section Ends Here -->
 
 </body>
+
 </html>

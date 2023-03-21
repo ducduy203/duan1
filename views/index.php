@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- Important to make website responsive -->
@@ -23,13 +24,13 @@
             <div class="menu text-right">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="categories.html">Categories</a>
+                        <a href="categories.php">Categories</a>
                     </li>
                     <li>
-                        <a href="foods.html">Foods</a>
+                        <a href="foods.php">Foods</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -45,14 +46,49 @@
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
-            
-            <h2>Foods on <a href="#" class="text-white">"Category"</a></h2>
+
+            <form action="food-search.php" method="POST">
+                <input type="search" name="search" placeholder="Search for Food.." required>
+                <input type="submit" name="submit" value="Search" class="btn btn-primary">
+            </form>
 
         </div>
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
+    <!-- CAtegories Section Starts Here -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="text-center">Explore Foods</h2>
 
+            <a href="category-foods.php">
+                <div class="box-3 float-container">
+                    <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
+
+                    <h3 class="float-text text-white">Pizza</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="box-3 float-container">
+                    <img src="images/burger.jpg" alt="Burger" class="img-responsive img-curve">
+
+                    <h3 class="float-text text-white">Burger</h3>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="box-3 float-container">
+                    <img src="images/momo.jpg" alt="Momo" class="img-responsive img-curve">
+
+                    <h3 class="float-text text-white">Momo</h3>
+                </div>
+            </a>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Categories Section Ends Here -->
 
     <!-- fOOD MEnu Section Starts Here -->
     <section class="food-menu">
@@ -61,18 +97,22 @@
 
             <div class="food-menu-box">
                 <div class="food-menu-img">
-                    <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    <a href="food-detail.php">
+                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    </a>
                 </div>
 
                 <div class="food-menu-desc">
-                    <h4>Food Title</h4>
+                    <a href="food-detail.php">
+                        <h4>Food Title</h4>
+                    </a>
                     <p class="food-price">$2.3</p>
                     <p class="food-detail">
                         Made with Italian Sauce, Chicken, and organice vegetables.
                     </p>
                     <br>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <a href="order.php" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -164,10 +204,13 @@
 
             <div class="clearfix"></div>
 
-            
+
 
         </div>
 
+        <p class="text-center">
+            <a href="#">See All Foods</a>
+        </p>
     </section>
     <!-- fOOD Menu Section Ends Here -->
 
@@ -176,13 +219,13 @@
         <div class="container text-center">
             <ul>
                 <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
                 </li>
             </ul>
         </div>
@@ -198,4 +241,5 @@
     <!-- footer Section Ends Here -->
 
 </body>
+
 </html>

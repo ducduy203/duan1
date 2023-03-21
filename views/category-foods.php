@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- Important to make website responsive -->
@@ -23,13 +24,13 @@
             <div class="menu text-right">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="categories.html">Categories</a>
+                        <a href="categories.php">Categories</a>
                     </li>
                     <li>
-                        <a href="foods.html">Foods</a>
+                        <a href="foods.php">Foods</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -45,11 +46,8 @@
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
-            
-            <form action="food-search.html" method="POST">
-                <input type="search" name="search" placeholder="Search for Food.." required>
-                <input type="submit" name="submit" value="Search" class="btn btn-primary">
-            </form>
+
+            <h2>Foods on <a href="#" class="text-white">"Category"</a></h2>
 
         </div>
     </section>
@@ -167,7 +165,7 @@
 
             <div class="clearfix"></div>
 
-            
+
 
         </div>
 
@@ -179,13 +177,13 @@
         <div class="container text-center">
             <ul>
                 <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
                 </li>
                 <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
                 </li>
             </ul>
         </div>
@@ -201,4 +199,5 @@
     <!-- footer Section Ends Here -->
 
 </body>
+
 </html>
