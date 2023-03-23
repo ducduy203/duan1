@@ -1,4 +1,4 @@
-<html>
+<?php include 'partials/menu.php' ?>
 
 <head>
     <title></title>
@@ -9,4 +9,4 @@
 
 </body>
 
-</html>
+<?php include 'partials/footer.php' ?>
