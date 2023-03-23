@@ -11,7 +11,7 @@ include('login-check.php');
 <head>
     <title>WowFood - Home Page</title>
 
-    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
