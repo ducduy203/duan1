@@ -7,7 +7,7 @@ function insert_user($full_name, $username, $password)
 
 function delete_user($id)
 {
-    $sql = "delete from tbl_user where id=.$id";
+    $sql = "delete from tbl_user where id=" . $id;
     pdo_execute($sql);
 }
 
