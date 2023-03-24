@@ -1,8 +1,8 @@
 <?php
 // include 'partials/menu.php';
 // include 'partials/menu.php';
-include '../model/PDO.php';
-include '../model/user.php';
+include '../../model/PDO.php';
+include '../../model/user.php';
 ?>
 
 <div class="main-content">
@@ -32,7 +32,7 @@ include '../model/user.php';
     </div>
 </div>
 
-<?php include 'partials/footer.php' ?>
+<!-- <?php include 'partials/footer.php' ?> -->
 
 <?php
 if (isset($_POST['submit'])) {

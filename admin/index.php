@@ -8,14 +8,14 @@ if (isset($_GET['act'])) {
     switch ($act) {
         case 'listuser':
             $listuser = loadall_user();
-            include "manage-user.php";
+            include "user/manage-user.php";
             break;
         case 'deleteuser':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 delete_user($_GET['id']);
             }
             $listuser = loadall_user();
-            include "manage-user.php";
+            include "user/manage-user.php";
             break;
 
         default:

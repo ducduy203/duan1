@@ -1,7 +1,7 @@
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage User</h1>
-        <a class="btn btn-primary mb-4" href="add-user.php">Add user</a>
+        <a class="btn btn-primary mb-4" href="user/add-user.php">Add user</a>
 
         <table class="table">
             <thead>
