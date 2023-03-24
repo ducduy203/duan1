@@ -10,8 +10,8 @@ include('login-check.php');
 
 <head>
     <title>WowFood - Home Page</title>
-
     <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
@@ -19,7 +19,7 @@ include('login-check.php');
         <div class="wrapper">
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="manage-admin.php">Admin</a></li>
+                <li><a href="index.php?act=listuser">User</a></li>
                 <li><a href="manage-category.php">Category</a></li>
                 <li><a href="manage-food.php">Food</a></li>
                 <li><a href="manage-order.php">Order</a></li>

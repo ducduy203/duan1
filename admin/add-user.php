@@ -1,13 +1,13 @@
 <?php
 // include 'partials/menu.php';
-include 'partials/menu.php';
+// include 'partials/menu.php';
 include '../model/PDO.php';
-include '../model/admin.php';
+include '../model/user.php';
 ?>
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Add Admin</h1>
+        <h1>Add User</h1>
 
         <form action="" method="post">
             <table>
@@ -39,6 +39,6 @@ if (isset($_POST['submit'])) {
     $full_name = $_POST['full_name'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    insert_admin($full_name, $username, $password);
+    insert_user($full_name, $username, $password);
 }
 ?>
