@@ -3,6 +3,8 @@ include 'partials/menu.php';
 include '../model/PDO.php';
 include '../model/user.php';
 include '../model/category.php';
+include '../model/food.php';
+
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -18,6 +20,49 @@ if (isset($_GET['act'])) {
             $listuser = loadall_user();
             include "user/manage-user.php";
             break;
+
+            case 'addsp':
+                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                    $tenloai = $_POST['tenloai'];
+                    insert_food($name, $description, $price, $image);
+                    $thongbao = "Thêm Thành Công!";
+                }
+                include "food/add.php";
+                break;
+    
+            case 'manage-food':
+                $listfood = loadall_food();
+                include "food/manage-food.php";
+                break;
+    
+            case 'xoasp':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_food($_GET['id']);
+                }
+                $listfood = loadall_food();
+                include "food/manage-food.php";
+                break;
+    
+            case 'updatefood':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $sp = loadone_food($_GET['id']);
+                }
+                include "food/manage-food.php";
+                break;
+    
+            case 'updatef':
+                if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
+                    $name = $_POST['name'];
+                    $description = $_POST['description'];
+                    $price = $_POST['price'];
+                    $image = $_POST['image'];
+                    $id = $_POST['id'];
+                    update_food($id, $name, $description, $price, $image);
+                    $thongbao = "Cập nhập thành công !";
+                }
+                $listfood = loadall_food();
+                include "food/manage-food.php";
+                break;
 
         case 'addcategory':
             if (isset($_POST['addnew']) && ($_POST['addnew'])) {

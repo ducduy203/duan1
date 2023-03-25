@@ -7,26 +7,35 @@
             <thead>
                 <tr>
                     <th class="table-danger" scope="col"></th>
-                    <th class="table-danger" scope="col">ID</th>
-                    <th class="table-danger" scope="col">Name</th>
-                    <th class="table-danger" scope="col">Username</th>
+                    <th class="table-danger" scope="col">Mã Sản Phẩm</th>
+                    <th class="table-danger" scope="col">Tên Sản Phẩm</th>
+                    <th class="table-danger" scope="col">Mô Tả</th>
+                    <th class="table-danger" scope="col">Giá</th>
+                    <th class="table-danger" scope="col">Image</th>
                     <th class="table-danger" scope="col">Action</th>
+
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($listuser as $user) {
-                    extract($user);
-                    $deleteuser = "index.php?act=deleteuser&id=" . $id;
+                foreach ($listfood as $food) {
+                    extract($food);
+                    $updatefood = "index.php?act=updatefood&id=".$id;
+                    $xoasp = "index.php?act=xoasp&id=".$id;
                     echo '<tr>
                         <td><input type="checkbox" name="" id=""></td>
-                        <td>' . $id . '</td>
-                        <td>' . $full_name . '</td>
-                        <td>' . $username . '</td>
+                        <td>'.$id.'</td>
+                        <td>'.$name.'</td>
+                        <td>'.$description.'</td>
+                        <td>'.$price.'</td>
+                        <td>'.$image.'</td>
                         <td>
-                            <a href="' . $deleteuser . '">
-                                <input class="btn btn-danger" onclick="return confirm(`Are you sure?`);" type="button" value="Delete">
+                            <a href="' . $updatefood . '">
+                                <input class="btn btn-danger" type="button" value="Update">
                             </a>
+                            <a href="' . $xoasp . '">
+                            <input class="btn btn-danger" onclick="return confirm(`Are you sure?`);" type="button" value="Delete">
+                        </a>
                         </td>
                     </tr>';
                 }
