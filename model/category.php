@@ -21,7 +21,7 @@ function loadone_category($id){
     return $category;
 }
 function update_category($id,$categoryname){
-    $sql="update tbl_category set name='".$categoryname."' where id=".$id;
+    $sql="update tbl_category set categoryname='".$categoryname."' where id=".$id;
     pdo_execute($sql);
 }
 ?>

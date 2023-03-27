@@ -48,14 +48,14 @@ if (isset($_GET['act'])) {
             include "category/update-category.php";
             break;
         case 'updatecate':
-            if(isset($_POST['updatecategory'])&&($_POST['updatecategory'])){
+            if(isset($_POST['update'])&&($_POST['update'])){
                 $categoryname=$_POST['categoryname'];
                 $id=$_POST['id'];
                 update_category($id,$categoryname);
                 $thongbao="Cập nhật thành công";
             }
             $listcategory=loadall_category();
-            include "category/add-category.php";
+            include "category/list-category.php";
             break;
 
         default:

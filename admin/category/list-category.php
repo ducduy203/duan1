@@ -1,16 +1,39 @@
-<div class="row">
-            <div class="row frmtitle">
-                <h1>Category List</h1>
-            </div>
-            <div class="row frmcontent">
-                <div class="row mb10 frmdsloai">
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Category Code</th>
-                            <th>Category Name</th>
-                            <th></th>
-                        </tr>
+<style>
+    h1{
+	font-weight: normal;
+	font-size: 4em;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 500px;
+	color: #F90;
+	text-align: center;
+    padding-bottom: 20px;
+    }
+    .input{
+        margin-left: 220px;
+        width: 400px;
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-items:center;
+    }
+	
+}
+</style>
+
+<div class="main-content">
+            <div class="wrapper">
+                <h1>List Category</h1>
+                
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="table-danger" scope="col"></th>
+                                <th class="table-danger" scope="col">Category Code</th>
+                                <th class="table-danger" scope="col">Category Name</th>
+                                <th class="table-danger" scope="col"></th>
+                            </tr>
+                        </thead>
                         <?php
                             foreach ($listcategory as $category) {
                                 extract($category);
@@ -20,17 +43,18 @@
                                 <td><input type="checkbox" name="" id=""></td>
                                 <td>'.$id.'</td>
                                 <td>'.$categoryname.'</td>
-                                <td><a href="'.$updatecategory.'"><input type="button" value="Category Update"></a> <a href="'.$deletecategory.'"><input type="button" value="Delete"></a></td>
+                                <td><a href="'.$updatecategory.'"><input class="btn btn-danger" type="button" value="Category Update"></a> <a href="'.$deletecategory.'"><input class="btn btn-danger" type="button" value="Delete"></a></td>
                             </tr>';
                             }
                         ?>
                     </table>
                 </div>
-                <div class="row mb10">
-                    <input type="button" value="Select All">
-                    <input type="button" value="Deselect All">
-                    <input type="button" value="Delete Selected">
-                    <a href="index.php?act=addcategory"><input type="button" value="Add More"></a>
+                <div class="input">
+                    <input type="button" class="btn btn-danger" value="Select All">
+                    <input type="button" class="btn btn-danger" value="Deselect All">
+                    <input type="button" class="btn btn-danger" value="Delete Selected">
+                    <a href="index.php?act=addcategory"><input type="button" class="btn btn-danger" value="Add More"></a>
                 </div>
             </div>
         </div>
+
