@@ -21,87 +21,121 @@ if (isset($_GET['act'])) {
             include "user/manage-user.php";
             break;
 
-            case 'addsp':
-                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                    $tenloai = $_POST['tenloai'];
-                    insert_food($name, $description, $price, $image);
-                    $thongbao = "Thêm Thành Công!";
-                }
-                include "food/add.php";
-                break;
-    
-            case 'manage-food':
-                $listfood = loadall_food();
-                include "food/manage-food.php";
-                break;
-    
-            case 'xoasp':
-                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                    delete_food($_GET['id']);
-                }
-                $listfood = loadall_food();
-                include "food/manage-food.php";
-                break;
-    
-            case 'updatefood':
-                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                    $sp = loadone_food($_GET['id']);
-                }
-                include "food/manage-food.php";
-                break;
-    
-            case 'updatef':
-                if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
-                    $name = $_POST['name'];
-                    $description = $_POST['description'];
-                    $price = $_POST['price'];
-                    $image = $_POST['image'];
-                    $id = $_POST['id'];
-                    update_food($id, $name, $description, $price, $image);
-                    $thongbao = "Cập nhập thành công !";
-                }
-                $listfood = loadall_food();
-                include "food/manage-food.php";
-                break;
-
         case 'addcategory':
             if (isset($_POST['addnew']) && ($_POST['addnew'])) {
-                $categoryname=$_POST['categoryname'];
+                $categoryname = $_POST['categoryname'];
                 insert_category($categoryname);
-                $thongbao="Successfully Added New";
+                $thongbao = "Successfully Added New";
             }
             include "category/add-category.php";
             break;
 
         case 'listcategory':
-            $listcategory=loadall_category();
+            $listcategory = loadall_category();
             include "category/list-category.php";
-            break;    
-            
+            break;
+
         case 'deletecategory':
-            if(isset($_GET['id'])&&($_GET['id']>0)){
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 delete_category($_GET['id']);
             }
-            $listcategory=loadall_category("",0);
+            $listcategory = loadall_category("", 0);
             include "category/list-category.php";
             break;
 
         case 'updatecategory':
-            if(isset($_GET['id'])&&($_GET['id']>0)){
-                $category=loadone_category($_GET['id']);
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $category = loadone_category($_GET['id']);
             }
             include "category/update-category.php";
             break;
         case 'updatecate':
-            if(isset($_POST['update'])&&($_POST['update'])){
-                $categoryname=$_POST['categoryname'];
-                $id=$_POST['id'];
-                update_category($id,$categoryname);
-                $thongbao="Cập nhật thành công";
+            if (isset($_POST['update']) && ($_POST['update'])) {
+                $categoryname = $_POST['categoryname'];
+                $id = $_POST['id'];
+                update_category($id, $categoryname);
+                $thongbao = "Cập nhật thành công";
             }
-            $listcategory=loadall_category();
+            $listcategory = loadall_category();
             include "category/list-category.php";
             break;
+
+        case 'addfood':
+            // ktra xem người dùng có click vào nút add hay không
+            if (isset($_POST['add']) && ($_POST['add'])) {
+                $category_id = $_POST['category_id'];
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $price = $_POST['price'];
+                $image = $_FILES['hinh'];
+                if ($image['size'] == 0) {
+                    $hinh = false;
+                    insert_food($name, $description, $price, $hinh, $category_id);
+                    $thongbao = "Thêm thành công";
+                } else {
+                    $hinh = 'imgs/' . basename($image['name']);
+                    if (move_uploaded_file($image["tmp_name"], $hinh)) {
+                        insert_food($name, $description, $price, $hinh, $category_id);
+                        $thongbao = "Thêm thành công";
+                    }
+                }
+            }
+            $listcategory = loadall_category();
+            include "food/add.php";
+            break;
+
+        case 'listfood':
+            if (isset($_POST['listok']) && ($_POST['listok'])) {
+                $keyword = $_POST['keyword'];
+                $category_id = $_POST['category_id'];
+            } else {
+                $keyword = '';
+                $category_id = 0;
+            }
+            $listcategory = loadall_category();
+            $listfood = loadall_food($keyword, $category_id);
+            include "food/manage-food.php";
+            break;
+
+        case 'deletefood':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_food($_GET['id']);
+            }
+            $listfood = loadall_food("", 0);
+            include "food/manage-food.php";
+            break;
+
+        case 'updatef':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $food = loadone_food($_GET['id']);
+            }
+            include "food/update.php";
+            break;
+
+        case 'updatefood':
+            if (isset($_POST['update']) && ($_POST['update'])) {
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $price = $_POST['price'];
+                $image = $_FILES['hinh'];
+                $id = $_POST['id'];
+                if ($image['size'] == 0) {
+                    $save = false;
+                    update_food($id, $name, $description, $price, $save);
+                    $thongbao = "Cập nhật thành công";
+                } else {
+                    $save = 'imgs/' . basename($image['name']);
+                    if (move_uploaded_file($image['tmp_name'], $save)) {
+
+                        update_food($id, $name, $description, $price, $save);
+                        $thongbao = "Cập nhật thành công";
+                    }
+                }
+            }
+            $listfood = loadall_food("", 0);
+            include "food/manage-food.php";
+            break;
+
 
         default:
             break;

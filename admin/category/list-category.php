@@ -1,60 +1,58 @@
 <style>
-    h1{
-	font-weight: normal;
-	font-size: 4em;
-	margin: 0 auto;
-	margin-top: 30px;
-	width: 500px;
-	color: #F90;
-	text-align: center;
-    padding-bottom: 20px;
+    h1 {
+        font-weight: normal;
+        font-size: 4em;
+        margin: 0 auto;
+        margin-top: 30px;
+        width: 500px;
+        color: #F90;
+        text-align: center;
+        padding-bottom: 20px;
     }
-    .input{
+
+    .input {
         margin-left: 220px;
         width: 400px;
         display: flex;
         gap: 10px;
         justify-content: space-between;
-        align-items:center;
+        align-items: center;
     }
-	
-}
 </style>
 
 <div class="main-content">
-            <div class="wrapper">
-                <h1>List Category</h1>
-                
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="table-danger" scope="col"></th>
-                                <th class="table-danger" scope="col">Category Code</th>
-                                <th class="table-danger" scope="col">Category Name</th>
-                                <th class="table-danger" scope="col"></th>
-                            </tr>
-                        </thead>
-                        <?php
-                            foreach ($listcategory as $category) {
-                                extract($category);
-                                $updatecategory="index.php?act=updatecategory&id=".$id;
-                                $deletecategory="index.php?act=deletecategory&id=".$id;
-                                echo '<tr>
-                                <td><input type="checkbox" name="" id=""></td>
-                                <td>'.$id.'</td>
-                                <td>'.$categoryname.'</td>
-                                <td><a href="'.$updatecategory.'"><input class="btn btn-danger" type="button" value="Category Update"></a> <a href="'.$deletecategory.'"><input class="btn btn-danger" type="button" value="Delete"></a></td>
-                            </tr>';
-                            }
-                        ?>
-                    </table>
-                </div>
-                <div class="input">
-                    <input type="button" class="btn btn-danger" value="Select All">
-                    <input type="button" class="btn btn-danger" value="Deselect All">
-                    <input type="button" class="btn btn-danger" value="Delete Selected">
-                    <a href="index.php?act=addcategory"><input type="button" class="btn btn-danger" value="Add More"></a>
-                </div>
-            </div>
-        </div>
+    <div class="wrapper">
+        <h1>List Category</h1>
 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="table-danger" scope="col"></th>
+                    <th class="table-danger" scope="col">Category Code</th>
+                    <th class="table-danger" scope="col">Category Name</th>
+                    <th class="table-danger" scope="col"></th>
+                </tr>
+            </thead>
+            <?php
+            foreach ($listcategory as $category) {
+                extract($category);
+                $updatecategory = "index.php?act=updatecategory&id=" . $id;
+                $deletecategory = "index.php?act=deletecategory&id=" . $id;
+                echo '<tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>' . $id . '</td>
+                                <td>' . $categoryname . '</td>
+                                <td><a href="' . $updatecategory . '"><input class="btn btn-danger" type="button" value="Category Update"></a> <a href="' . $deletecategory . '"><input class="btn btn-danger" type="button" value="Delete"></a></td>
+                            </tr>';
+            }
+            ?>
+        </table>
+    </div>
+    <div class="input">
+        <input type="button" class="btn btn-danger" value="Select All">
+        <input type="button" class="btn btn-danger" value="Deselect All">
+        <input type="button" class="btn btn-danger" value="Delete Selected">
+        <a href="index.php?act=addcategory"><input type="button" class="btn btn-danger" value="Add More"></a>
+    </div>
+</div>
+</div>

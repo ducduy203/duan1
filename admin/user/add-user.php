@@ -40,5 +40,6 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     insert_user($full_name, $username, $password);
+    // header('Location: manage-user.php');
 }
 ?>
