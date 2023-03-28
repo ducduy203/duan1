@@ -24,11 +24,10 @@
 <div class="main-content">
             <div class="wrapper">
                 <h1>List Category</h1>
-                
                     <table class="table">
                         <thead>
                             <tr>
-                                <th class="table-danger" scope="col"></th>
+                                <th class="table-danger" scope="col"><input type="checkbox" name="" id="checkboxAll"></th>
                                 <th class="table-danger" scope="col">Category Code</th>
                                 <th class="table-danger" scope="col">Category Name</th>
                                 <th class="table-danger" scope="col"></th>
@@ -40,7 +39,7 @@
                                 $updatecategory="index.php?act=updatecategory&id=".$id;
                                 $deletecategory="index.php?act=deletecategory&id=".$id;
                                 echo '<tr>
-                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" class="chkboxname" id="checkbox'.$id.'"></td>
                                 <td>'.$id.'</td>
                                 <td>'.$categoryname.'</td>
                                 <td><a href="'.$updatecategory.'"><input class="btn btn-danger" type="button" value="Category Update"></a> <a href="'.$deletecategory.'"><input class="btn btn-danger" type="button" value="Delete"></a></td>
@@ -55,6 +54,13 @@
                     <input type="button" class="btn btn-danger" value="Delete Selected">
                     <a href="index.php?act=addcategory"><input type="button" class="btn btn-danger" value="Add More"></a>
                 </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("#checkboxAll").click(funtion(){
+                            $(".chkboxname").prop('checked',$(this).prod('checked'));
+                        });
+                    });
+                </script>
             </div>
         </div>
 
