@@ -4,7 +4,12 @@ include '../model/PDO.php';
 include '../model/user.php';
 include '../model/category.php';
 include '../model/food.php';
-
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -24,8 +29,25 @@ if (isset($_GET['act'])) {
         case 'addcategory':
             if (isset($_POST['addnew']) && ($_POST['addnew'])) {
                 $categoryname = $_POST['categoryname'];
-                insert_category($categoryname);
+                $categorynameErr="";
+                $categoryname="";
+                
+                if (empty($_POST["categoryname"])) {
+                    $categorynameErr="Name is required";
+
+                }   else{
+                    $categoryname = test_input($_POST["categoryname"]);
+                    if(!preg_match("/^[a-zA-Z-' ]*$/",$categoryname)){
+                        $categorynameErr="Only letters and white space allowed";
+                    }
+                    
+                }
+            
+              if (empty($categorynameErr)) {
+                  insert_category($categoryname);
                 $thongbao = "Successfully Added New";
+              }
+                
             }
             include "category/add-category.php";
             break;

@@ -48,16 +48,16 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item mx-3">
-                                <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active fw-bold fs-4" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link fw-bold" href="#">Features</a>
+                                <a class="nav-link fw-bold fs-4" href="#">Features</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link fw-bold" href="#">Pricing</a>
+                                <a class="nav-link fw-bold fs-4" href="#">Pricing</a>
                             </li>
                             <li class="nav-item dropdown ms-3">
-                                <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle fw-bold fs-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown link
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -77,7 +77,7 @@
     <!-- Navbar Section Ends Here -->
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center" style="background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-simple-food-top-view-banner-image_178573.jpg);">
+    <section class="food-search text-center" style="background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-simple-food-top-view-banner-image_178573.jpg)">
         <div class="container">
 
             <form action="food-search.php" method="POST">

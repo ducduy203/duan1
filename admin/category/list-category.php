@@ -18,7 +18,6 @@
         align-items:center;
     }
 	
-}
 </style>
 
 <div class="main-content">

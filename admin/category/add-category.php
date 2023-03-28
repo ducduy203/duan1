@@ -138,25 +138,7 @@ label{
         <h1>Add Category</h1>
 
         <?php
-            $categorynameErr="";
-            $categoryname="";
-            if($_SERVER["REQUEST_METHOD"]=="POST"){
-                if (empty($_POST["categoryname"])) {
-                    $categorynameErr="Name is required";
-
-                }else{
-                    $categoryname = test_input($_POST["categoryname"]);
-                    if(!preg_match("/^[a-zA-Z-' ]*$/",$categoryname)){
-                        $categorynameErr="Only letters and white space allowed";
-                    }
-                }
-            }
-            function test_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-              }
+            
         ?>
         <div class="">
                 <form action="index.php?act=addcategory" id="waterform" method="post">
@@ -170,7 +152,7 @@ label{
                         <label for="email">Category Name</label>
                         <div class="namecategory">
                         <input type="text" id="email" name="categoryname" />
-                        <span class="error"> <?php echo $categorynameErr; ?></span>
+                        <span class="error"> <?php echo $categorynameErr??''; ?></span>
                         </div>
                     </div>
                     <br>
