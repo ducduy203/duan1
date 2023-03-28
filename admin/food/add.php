@@ -1,38 +1,60 @@
+<style>
+    form {
+        width: 500px;
+        margin: 300px;
+        margin-bottom: 50px;
+    }
+</style>
+
 <div class="row">
     <div class="row frmtitle">
-       <h1>Thêm Mới Sản Phẩm</h1>
+        <h1>Add Food</h1>
     </div>
     <div class="row frmcontent">
-        <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
-            <div class="row mb10">
-                Mã Sản Phẩm <br>
-                <input type="text" name="masp" disabled>
+        <form action="index.php?act=addfood" method="post" enctype="multipart/form-data">
+            <div>
+                Category <br>
+                <select name="category_id">
+                    <?php
+                    foreach ($listcategory as $category) {
+                        extract($category);
+                        echo '<option value="' . $id . '">' . $categoryname . '</option>';
+                    }
+
+                    ?>
+                </select>
             </div>
-            <div class="row mb10">
-                Tên Sản Phẩm <br>
-                <input type="text" name="tensp">
+            <div>
+                <label class="form-label">ID</label>
+                <input type="text" class="form-control" name="id" disabled>
             </div>
-            <div class="row mb10">
-                Mô Tả <br>
-                <textarea name="mota" id="" cols="30" row="10"></textarea>
+            <div>
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" name="name">
             </div>
-            <div class="row mb10">
-                Giá <br>
-                <input type="text" name="gia">
+            <div>
+                <label class="form-label">Description</label>
+                <input type="text" class="form-control" name="description">
             </div>
-            <div class="row mb10">
-                Image <br>
-                <input type="file" name="image" id="">
+            <div>
+                <label class="form-label">Price</label>
+                <input type="text" class="form-control" name="price">
             </div>
-            <div class="row mb10">
-                <input type="submit" name="themmoi" value="Thêm Mới">
-                <input type="reset" value="Nhập Lại">
-                <a href="index.php?act=listsp"><input type="button" value="Danh Sách"></a>
+            <div>
+                <label class="form-label">Image</label>
+                <input type="file" class="form-control" name="hinh">
             </div>
-            <?php 
-            if(isset($thongbao)&&($thongbao!="")) echo $thongbao;
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <input type="submit" class="btn btn-primary" name="add" value="Thêm Mới">
+            <a href="index.php?act=listfood"><input type="button" class="btn btn-primary" value="Danh Sách"></a>
+            <?php
+            if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
             ?>
+
         </form>
-    </div>
+
     </div>
 </div>
