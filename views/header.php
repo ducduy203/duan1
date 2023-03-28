@@ -77,7 +77,7 @@
     <!-- Navbar Section Ends Here -->
 
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center" style="background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-simple-food-top-view-banner-image_178573.jpg)">
+    <section class="food-search text-center" style="background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-simple-food-top-view-banner-image_178573.jpg);">
         <div class="container">
 
             <form action="food-search.php" method="POST">
