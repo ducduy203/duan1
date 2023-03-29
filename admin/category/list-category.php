@@ -53,13 +53,13 @@
                     <input type="button" class="btn btn-danger" value="Delete Selected">
                     <a href="index.php?act=addcategory"><input type="button" class="btn btn-danger" value="Add More"></a>
                 </div>
-                <script type="text/javascript">
+                <!-- <script type="text/javascript">
                     $(document).ready(function(){
                         $("#checkboxAll").click(funtion(){
                             $(".chkboxname").prop('checked',$(this).prod('checked'));
                         });
                     });
-                </script>
+                </script> -->
             </div>
         </div>
 
