@@ -22,23 +22,6 @@
                     <img src="views/images/logo.png" alt="Restaurant Logo" class="img-responsive">
                 </a>
             </div>
-            <!-- 
-            <div class="menu text-right">
-                <ul>
-                    <li>
-                        <a href="index.php">Home</a>
-                    </li>
-                    <li>
-                        <a href="categories.php">Categories</a>
-                    </li>
-                    <li>
-                        <a href="foods.php">Foods</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div> -->
 
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
@@ -49,13 +32,13 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item mx-3">
-                                <a class="nav-link active fw-bold fs-4" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active fw-bold fs-4" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link fw-bold fs-4" href="#">Category</a>
+                                <a class="nav-link fw-bold fs-4" href="index.php?atc=category">Category</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link fw-bold fs-4" href="#">Food</a>
+                                <a class="nav-link fw-bold fs-4" href="index.php?atc=food">Food</a>
                             </li>
                             <li class="nav-item ms-3">
                                 <a class="nav-link fw-bold fs-4" href="#">Contact</a>
