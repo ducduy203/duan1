@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <!-- Important to make website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
+    <title>WowFood</title>
 
     <!-- Link our CSS file -->
     <link rel="stylesheet" href="css/style.css">
@@ -35,13 +35,13 @@
                                 <a class="nav-link active fw-bold fs-4" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link fw-bold fs-4" href="index.php?atc=category">Category</a>
+                                <a class="nav-link fw-bold fs-4" href="index.php?act=category">Category</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link fw-bold fs-4" href="index.php?atc=food">Food</a>
+                                <a class="nav-link fw-bold fs-4" href="index.php?act=food">Food</a>
                             </li>
                             <li class="nav-item ms-3">
-                                <a class="nav-link fw-bold fs-4" href="#">Contact</a>
+                                <a class="nav-link fw-bold fs-4" href="index.php?act=contact">Contact</a>
                             </li>
                         </ul>
                     </div>

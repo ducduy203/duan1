@@ -5,7 +5,7 @@ include 'model/PDO.php';
 include 'model/category.php';
 include 'model/food.php';
 
-$newfood = loadall_food_home();
+// $newfood = loadall_food_home();
 
 if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     $act = $_GET['act'];
