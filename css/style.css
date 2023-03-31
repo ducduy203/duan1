@@ -171,6 +171,7 @@ fieldset {
 
 .food-menu-img {
     width: 20%;
+    /* height: 100%; */
     float: left;
 }
 

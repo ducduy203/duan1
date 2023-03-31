@@ -33,7 +33,7 @@ function loadall_food($keyword, $category_id)
 
 function loadall_food_home()
 {
-    $sql = " select * from tbl_food where 1 order by id desc limit 0,9";
+    $sql = " select * from tbl_food order by id desc";
     $listfood = pdo_query($sql);
     return $listfood;
 }
