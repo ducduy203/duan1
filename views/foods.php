@@ -13,7 +13,7 @@
                 $hinh = "no photo";
             }
             echo '
-                <div class="food-menu-box">
+                <div class="food-menu-box" style="margin: 30px 0 0 50px">
                     <div class="food-menu-img">
                         <img src="' . $hinh . '" width="120px" height="120px">
                     </div>
@@ -33,7 +33,6 @@
         ?>
 
         <div class="clearfix"></div>
-        <span class="material-symbols-outlined">add_box</span>
 
 
     </div>
