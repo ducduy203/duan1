@@ -7,7 +7,7 @@
         foreach ($listfood as $food) {
             extract($food);
             if ($image) {
-                $hinhpath = "/DUAN1/views/" . $image;
+                $hinhpath = "/DUAN1/admin/" . $image;
                 $hinh = $hinhpath;
             } else {
                 $hinh = "no photo";
