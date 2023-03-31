@@ -12,8 +12,6 @@
             } else {
                 $hinh = "no photo";
             }
-            // echo $hinh;
-            // die;
             echo '
                 <div class="food-menu-box">
                     <div class="food-menu-img">
@@ -28,7 +26,6 @@
                         <p class="food-detail">' . $description . '</p>
                         <br>
                         <a href="views/order.php" class="btn btn-danger">Order Now</a>
-                        <a href="views/order.php" class="btn btn-danger"><span class="material-symbols-outlined">add_box</span></a>
                     </div>
                 </div>
                 ';
