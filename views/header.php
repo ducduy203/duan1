@@ -43,6 +43,9 @@
                             <li class="nav-item ms-3">
                                 <a class="nav-link fw-bold fs-4" href="index.php?act=contact">Contact</a>
                             </li>
+                            <li class="nav-item ms-3">
+                                <a class="nav-link fw-bold fs-4" href="views/login.php">Login</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
