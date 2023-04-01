@@ -11,11 +11,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
+/* .container {
     width: 80%;
     margin: 0 auto;
     padding: 1%;
-}
+} */
 
 .img-responsive {
     width: 100%;
@@ -87,7 +87,7 @@ h3 {
     position: relative;
 }
 
-.float-text {
+.float-text { 
     position: absolute;
     bottom: 50px;
     left: 40%;
@@ -126,7 +126,6 @@ fieldset {
 /* CSS for Food SEarch Section */
 
 .food-search {
-    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-simple-food-top-view-banner-image_178573.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -141,6 +140,15 @@ fieldset {
     border-radius: 5px;
 }
 
+.food-search {
+    padding: 10% 0;
+}
+
+.food-search input[type="search"] {
+    width: 90%;
+    padding: 2%;
+    margin-bottom: 3%;
+}
 
 /* CSS for Categories */
 .categories {
@@ -223,62 +231,3 @@ fieldset {
 
 
 
-/* CSS for Mobile Size or Smaller Screen */
-
-@media only screen and (max-width:768px) {
-    .logo {
-        width: 80%;
-        float: none;
-        margin: 1% auto;
-    }
-
-    .menu ul {
-        text-align: center;
-    }
-
-    .food-search input[type="search"] {
-        width: 90%;
-        padding: 2%;
-        margin-bottom: 3%;
-    }
-
-    .btn {
-        width: 91%;
-        padding: 2%;
-    }
-
-    .food-search {
-        padding: 10% 0;
-    }
-
-    .categories {
-        padding: 20% 0;
-    }
-
-    h2 {
-        margin-bottom: 10%;
-    }
-
-    .box-3 {
-        width: 100%;
-        margin: 4% auto;
-    }
-
-    .food-menu {
-        padding: 20% 0;
-    }
-
-    .food-menu-box {
-        width: 90%;
-        padding: 5%;
-        margin-bottom: 5%;
-    }
-
-    .social {
-        padding: 5% 0;
-    }
-
-    .order {
-        width: 100%;
-    }
-}
