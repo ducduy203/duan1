@@ -19,6 +19,15 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             include "views/foods.php";
             break;
 
+        case 'food-detail':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $onefood = loadone_food($id);
+                include "views/food-detail.php";
+            }else{
+                include "views/home.php";
+            }
+
         case 'contact':
             include "views/contact.php";
             break;

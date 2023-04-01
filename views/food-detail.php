@@ -1,3 +1,9 @@
+<?php
+include "../model/PDO.php";
+include "../model/food.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,46 +20,52 @@
 
 <body>
     <div class="product">
-        <div class="product__photo">
-            <div class="">
-                <img class="photo-main" src="images/menu-pizza.jpg" alt="green apple slice">
+            <!-- <div class="product__photo">
+                <div class="">
+                    <img class="photo-main" src="images/menu-pizza.jpg" alt="green apple slice">
+                </div>
+                <div class="variant">
+                    <h3></h3>
+                    <ul>
+                        <li>12cm</li>
+                        <li>18cm</li>
+                        <li>22cm</li>
+                    </ul>
+                </div>
             </div>
-            <div class="variant">
-                <!-- <h3>SELECT A </h3> -->
-                <ul>
-                    <li>12cm</li>
-                    <li>18cm</li>
-                    <li>22cm</li>
-                </ul>
-            </div>
-        </div>
-        <div class="product__info">
-            <div class="title">
-                <h1>Pizza</h1>
-                <span>COD: 45999</span>
-            </div>
-            <div class="price">
-                <span>159.000</span> đ
-            </div>
-            <!-- <div class="variant">
-                <h3>SELECT A </h3>
-                <ul>
-                    <li>gdabfaj</li>
-                    <li>dhewuibds</li>
-                    <li>sjhfiaz</li>
-                </ul>
+            <div class="product__info">
+                <div class="title">
+                    <h1>Pizza</h1>
+                    <span>COD: 45999</span>
+                </div>
+                <div class="price">
+                    <span>159.000</span> đ
+                </div>
+                <div class="description">
+                    <h3>INCLUDES</h3>
+                    <ul>
+                        <li>Đế bánh</li>
+                        <li>Cà chua</li>
+                        <li>Xúc xích</li>
+                        <li>..</li>
+                    </ul>
+                </div>
+                <button class="buy--btn">ADD TO CART</button>
             </div> -->
-            <div class="description">
-                <h3>INCLUDES</h3>
-                <ul>
-                    <li>Đế bánh</li>
-                    <li>Cà chua</li>
-                    <li>Xúc xích</li>
-                    <li>..</li>
-                </ul>
-            </div>
-            <button class="buy--btn">ADD TO CART</button>
+
+        <?php
+            extract($onefood);
+        ?>
+        <?php
+        echo '
+        <div class="title">
+        <h1>'.$name.'</h1>
+        <span>COD: 45999</span>
         </div>
+        ';
+        ?>
+
+
     </div>
 
     <div>

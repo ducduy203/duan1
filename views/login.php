@@ -113,6 +113,11 @@ button{
 .register p a:hover{
     text-decoration: underline;
 }
+.row a{
+    margin-left: 110px;
+    text-decoration: none;
+    color: #F2727D;
+}
   </style>
 </head>
 <body>
@@ -142,6 +147,9 @@ button{
                         <p>Don't have a account <a href="register.php">Register</a></p>
                     </div>
                 </form>
+                <div class="row">
+                    <a href="../index.php"><- Quay Lại</a>
+                </div>
             </div>
         </div>
     </section>

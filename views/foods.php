@@ -12,25 +12,24 @@
             } else {
                 $hinh = "no photo";
             }
-            echo '
+            ?>
                 <div class="food-menu-box" style="margin: 30px 0 0 50px">
                     <div class="food-menu-img">
-                        <img src="' . $hinh . '" width="120px" height="120px">
+                        <img src="<?= $hinh ?>" width="120px" height="120px">
                     </div>
 
                     <div class="food-menu-desc">
-                        <a href="food-detail.php" style="text-decoration: none; color: #ff6b81">
-                            <h4>' . $name . '</h4>
+                        <a href="views/food-detail.php?id=<?php echo $id; ?>" style="text-decoration: none; color: #ff6b81">
+                            <h4><?= $name ?></h4>
                         </a>
-                        <p class="food-price">' . $price . ' đ</p>
-                        <p class="food-detail">' . $description . '</p>
+                        <p class="food-price"><?= $price ?> đ</p>
+                        <p class="food-detail"><?= $description ?></p>
                         <br>
                         <a href="views/order.php" class="btn btn-danger">Order Now</a>
                     </div>
                 </div>
-                ';
-        }
-        ?>
+							<?php } ?>
+        
 
         <div class="clearfix"></div>
 

@@ -40,8 +40,8 @@ function loadall_food_home()
 function loadone_food($id)
 {
     $sql = "select * from tbl_food where id=" . $id;
-    $food = pdo_query_one($sql);
-    return $food;
+    $onefood = pdo_query_one($sql);
+    return $onefood;
 }
 function load_food_cungloai($id, $category_id)
 {
