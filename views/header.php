@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="js/home.js">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -20,13 +20,13 @@
                 
                 <div class="dropdown show mx-5 my-2">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
+                        Account
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="views/login.php">Login</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                        <!-- <a class="dropdown-item" href="#">Registerin</a> -->
                     </div>
                 </div>
             </div>
