@@ -7,18 +7,16 @@
     <title>WowFood</title>
 
     <link rel="stylesheet" href="css/style.css">
-<<<<<<< HEAD
+
     <link rel="stylesheet" href="js/home.js">
-=======
->>>>>>> 45d5344e436c87efbffdb62ea25020bf7b4ccf34
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 
 <body>
-<<<<<<< HEAD
+
     <!-- Navbar Section Starts Here -->
             <div class="navbar bg-dark ">
-                <a class="mx-5 fw-bold text-decoration-none my-2 text-white">Taste the goodness in every bite!</a>
+                <a class="mx-5 fw-bold text-decoration-none my-2 text-white"> WowFood - Taste the goodness in every bite!</a>
                 
                 <div class="dropdown show mx-5 my-2">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,8 +30,6 @@
                     </div>
                 </div>
             </div>
-=======
->>>>>>> 45d5344e436c87efbffdb62ea25020bf7b4ccf34
     <section class="navbar">
         <div class="container">
             <div class="">
@@ -44,14 +40,8 @@
 
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
-<<<<<<< HEAD
-                    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-                    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-=======
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
->>>>>>> 45d5344e436c87efbffdb62ea25020bf7b4ccf34
-                        <span class="navbar-toggler-icon"></span>
-                    </button> -->
+
+
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item mx-3">
@@ -93,5 +83,7 @@
     </section>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 </html>
