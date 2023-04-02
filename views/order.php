@@ -126,6 +126,7 @@ fieldset {
 				?>
                     <a href="index.php" class="food-menu-img">
                         <img src="../admin/<?= $image ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                        <img src="<?= $image ?>" alt="Image" class="img-responsive img-curve">
                     </a>
 
                     <div class="food-menu-desc">
@@ -134,6 +135,27 @@ fieldset {
 
                         <div class="order-label">Quantity</div>
                         <input type="number" name="qty" class="input-responsive" value="1" required>
+
+
+                        <div class="order-label">Size</div>
+                        <div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    S
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">
+    M
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+  <label class="form-check-label" for="exampleRadios3">
+    L
+  </label>
+</div>
 
                     </div>
 					<?php } ?>
@@ -148,18 +170,20 @@ fieldset {
                 <fieldset>
                     <legend>Delivery Details</legend>
                     <div class="order-label">Full Name</div>
-                    <input type="text" name="full-name" placeholder="E.g. Vijay Thapa" class="input-responsive" required>
+                    <input type="text" name="full-name" placeholder="Full Name" class="input-responsive" required>
 
                     <div class="order-label">Phone Number</div>
-                    <input type="tel" name="contact" placeholder="E.g. 9843xxxxxx" class="input-responsive" required>
+                    <input type="tel" name="contact" placeholder="Phone Number" class="input-responsive" required>
 
                     <div class="order-label">Email</div>
-                    <input type="email" name="email" placeholder="E.g. hi@vijaythapa.com" class="input-responsive" required>
+                    <input type="email" name="email" placeholder="Email" class="input-responsive" required>
 
                     <div class="order-label">Address</div>
-                    <textarea name="address" rows="10" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea>
+                    <textarea name="address" rows="10" placeholder="Address" class="input-responsive" required></textarea>
 
-                    <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
+                    <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary"> &ensp;
+                    <input type="submit" name="Back" value="Back" class="btn btn-primary">
+                    
                 </fieldset>
 
             </form>

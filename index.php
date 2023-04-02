@@ -43,6 +43,10 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             include "views/register.php";
             break;
 
+        case 'cart':
+            include "views/cart/viewcart.php";
+            break;
+
         default:
             break;
     }

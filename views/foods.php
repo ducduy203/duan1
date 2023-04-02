@@ -25,7 +25,8 @@
                         <p class="food-price"><?= $price ?> đ</p>
                         <p class="food-detail"><?= $description ?></p>
                         <br>
-                        <a href="views/order.php?id=<?php echo $id; ?>" class="btn btn-danger">Order Now</a>
+                        <a href="views/order.php?id=<?php echo $id; ?>" class="btn btn-danger">Order Now</a> &ensp;
+                        <a href="index.php?act=cart" class="btn btn-danger">Add</a>
                     </div>
                 </div>
 				<?php } ?>
