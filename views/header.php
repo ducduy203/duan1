@@ -20,7 +20,13 @@
             <div class="navbar bg-dark">
                 <a class="ms-5 fw-bold text-decoration-none my-2 text-white"> WowFood - Taste the goodness in every bite!</a>
                 
-                <div class="dropdown show me-4 my-2" >
+                <div class="dropdown show me-4 my-2 d-flex" >
+                    <a href="" class="">
+                            <span class="material-symbols-outlined text-light mt-2 ms-3">
+                                shopping_cart
+                            </span>
+                    </a>
+                
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Account
                     </a>
@@ -45,7 +51,7 @@
         <div class="container">
             <img src="views/images/logo.png" alt="Restaurant Logo" class="">
 
-            <nav class="navbar navbar-expand-lg navbar-light pe-5">
+            <nav class="navbar navbar-expand-lg navbar-light pe-4">
                     <div class="collapse navbar-collapse " id="navbarNavDropdown">
                         <ul class="navbar-nav pe-5">
                             <li class="nav-item me-4">
@@ -77,10 +83,10 @@
         <img src="views/images/banner1.jpg" class="d-block w-100" style="height: 400px" alt="">
         </div>
         <div class="carousel-item">
-        <img src="views/images/banner2.jpg" class="d-block w-100" alt="">
+        <img src="views/images/banner2.jpg" class="d-block w-100" style="height: 400px" alt="">
         </div>
         <div class="carousel-item">
-        <img src="views/images/banner3.jpg" class="d-block w-100" alt="">
+        <img src="views/images/banner3.jpg" class="d-block w-100" style="height: 400px" alt="">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">

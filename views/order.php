@@ -125,7 +125,7 @@ fieldset {
 						$description = $onefood['description'];
 				?>
                     <a href="index.php" class="food-menu-img">
-                        <img src="<?= $image ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                        <img src="../admin/<?= $image ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
                     </a>
 
                     <div class="food-menu-desc">
