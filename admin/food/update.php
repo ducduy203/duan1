@@ -3,9 +3,11 @@ if (is_array($food)) {
     extract($food);
 }
 ?>
+
+
 <div class="row">
     <div class="row frmtitle">
-        <h1>Cập Nhập Sản Phẩm</h1>
+        <h1>Update Food</h1>
     </div>
     <div class="row frmcontent">
         <form action="index.php?act=updatefood" method="post" enctype="multipart/form-data">
