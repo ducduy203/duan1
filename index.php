@@ -27,6 +27,9 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             }else{
                 include "views/home.php";
             }
+        case 'order':
+            include "views/order.php";
+            break;
 
         case 'contact':
             include "views/contact.php";

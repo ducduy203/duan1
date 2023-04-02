@@ -25,10 +25,10 @@
                         <p class="food-price"><?= $price ?> đ</p>
                         <p class="food-detail"><?= $description ?></p>
                         <br>
-                        <a href="views/order.php" class="btn btn-danger">Order Now</a>
+                        <a href="index.php?act=order" class="btn btn-danger">Order Now</a>
                     </div>
                 </div>
-							<?php } ?>
+				<?php } ?>
         
 
         <div class="clearfix"></div>

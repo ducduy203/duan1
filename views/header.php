@@ -31,24 +31,19 @@
                 </div>
             </div>
     <section class="navbar">
-        <div class="container">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 2fr">
             <div class="">
-                <a href="#" title="Logo">
+                <a href="index.php" title="Logo">
                     <img src="views/images/logo.png" alt="Restaurant Logo" class="">
                 </a>
             </div>
 
             <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-
 
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item mx-3">
                                 <a class="nav-link active fw-bold fs-4" aria-current="page" href="index.php">Home</a>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link fw-bold fs-4" href="index.php?act=category">Category</a>
                             </li>
                             <li class="nav-item mx-3"> 
                                 <a class="nav-link fw-bold fs-4" href="index.php?act=food">Food</a>
@@ -56,16 +51,14 @@
                             <li class="nav-item ms-3">
                                 <a class="nav-link fw-bold fs-4" href="index.php?act=contact">Contact</a>
                             </li>
-                            <li class="nav-item ms-3">
-                                <a class="nav-link fw-bold fs-4" href="views/login.php">Login</a>
-                            </li>
                         </ul>
-                        <form action="food-search.php" method="POST" class="text-center container" style="padding-left: 100px">
-                            <input type="search" name="search" class="border border-secondary border-1 rounded-1" style="height: 37px; padding: 10px; outline: none" placeholder="Search for Food.." required>
-                            <input type="submit" name="submit" value="Search" class="btn btn-primary w">
-                        </form>
                     </div>
-                </div>
+
+                    <form action="food-search.php" method="POST" class="text-center container" style="margin-left: 200px">
+                        <input type="text" name="search" class="border border-secondary border-0 rounded-5 me-2" style="height: 32px; padding: 10px; outline: none; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;" placeholder="Search for Food.." required>
+                        <input type="submit" name="submit" value="Search" class="btn btn-primary rounded-5" style="height: 32px; padding: 10px; line-height: 30%; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+                    </form>
+                    
             </nav>
 
             <div class="clearfix"></div>
