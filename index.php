@@ -1,9 +1,10 @@
 <?php
+session_start();
 include 'model/PDO.php';
 include 'model/category.php';
 include 'model/food.php';
 
-
+if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
 if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     $act = $_GET['act'];
@@ -47,10 +48,21 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             include "views/register.php";
             break;
 
-        case 'cart':
-            include "views/cart/viewcart.php";
-            break;
-
+            case 'addtocart':
+                if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
+                    $id=$_POST['id'];
+                    $name=$_POST['name'];
+                    $image=$_POST['image'];
+                    $price=$_POST['price'];
+                    $quantity=1;
+                    $money=$quantity * $price;
+                    $foodadd=[$id,$name,$image,$price,$quantity,$money];
+                    array_push($_SESSION['mycart'],$foodadd);
+                    
+                }
+    
+                include "views/cart/viewcart.php";
+                break;
         default:
             break;
     }

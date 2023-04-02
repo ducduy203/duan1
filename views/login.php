@@ -148,7 +148,7 @@ button{
                     </div>
                 </form>
                 <div class="row">
-                    <a href="../index.php"><- Back</a>
+                    <a href="index.php"><- Back</a>
                 </div>
             </div>
         </div>

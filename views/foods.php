@@ -18,16 +18,17 @@
                         <img src="<?= $hinh ?>" width="120px" height="120px">
                     </div>
 
-                    <div class="food-menu-desc">
-                        <a href="views/food-detail.php?id=<?php echo $id; ?>" style="text-decoration: none; color: #ff6b81">
-                            <h4><?= $name ?></h4>
-                        </a>
-                        <p class="food-price"><?= $price ?> đ</p>
-                        <p class="food-detail"><?= $description ?></p>
-                        <br>
-                        <a href="views/order.php?id=<?php echo $id; ?>" class="btn btn-danger">Order Now</a> &ensp;
-                        <a href="index.php?act=cart" class="btn btn-danger">Add</a>
-                    </div>
+                    <form action="index.php?act=addtocart" method="post" class="food-menu-desc">
+                    <a href="views/food-detail.php?id=<?php echo $id; ?>" style="text-decoration: none; color: #ff6b81">
+                        <h4><?= $name ?></h4>
+                    </a>
+                    <p class="food-price"><?= $price ?> đ</p>
+                    <p class="food-detail"><?= $description ?></p>
+                    <br>
+                    <a href="views/order.php?id=<?php echo $id; ?>" class="btn btn-danger">Order Now</a> &ensp;
+                    <!-- <a href="" class="btn btn-danger">Add</a> -->
+                    <button type="submit" name="addtocart" class="btn btn-danger">Add</button>
+                </form>
                 </div>
 				<?php } ?>
         
