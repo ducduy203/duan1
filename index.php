@@ -1,5 +1,4 @@
 <?php
-include 'views/header.php';
 include 'model/PDO.php';
 include 'model/category.php';
 include 'model/food.php';
@@ -10,13 +9,18 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     $act = $_GET['act'];
     switch ($act) {
         case 'category':
+            include 'views/header.php';
             $listcategory = loadall_category();
-            include "views/categories.php";
+            include  "views/categories.php";
+            include 'views/footer.php';
+
             break;
 
         case 'food':
+            include 'views/header.php';
             $listfood = loadall_food_home();
             include "views/foods.php";
+            include 'views/footer.php';
             break;
 
         case 'food-detail':
@@ -51,8 +55,8 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             break;
     }
 } else {
+    include 'views/header.php';
     include 'views/home.php';
+    include 'views/footer.php';
 }
 
-
-include 'views/footer.php';

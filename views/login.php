@@ -16,7 +16,7 @@ section{
     min-height: 100vh;
     width: 100%;
     
-    background: url('./images/banner.jpg')no-repeat;
+    background: url('views/images/banner.jpg')no-repeat;
     background-position: center;
     background-size: cover;
 }

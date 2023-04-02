@@ -32,7 +32,7 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item d-flex" href="views/login.php">Login
+                        <a class="dropdown-item d-flex" href="index.php?act=login">Login
                             <span class="ms-2 material-symbols-outlined">
                             login
                             </span>
@@ -48,10 +48,10 @@
                 </div>
             </div>
     <section class="navbar">
-        <div class="container">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 2fr">
             <img src="views/images/logo.png" alt="Restaurant Logo" class="">
 
-            <nav class="navbar navbar-expand-lg navbar-light pe-4">
+            <nav class="navbar navbar-expand-xxl navbar-light">
                     <div class="collapse navbar-collapse " id="navbarNavDropdown">
                         <ul class="navbar-nav pe-5">
                             <li class="nav-item me-4">
@@ -60,14 +60,14 @@
                             <li class="nav-item me-4">
                                 <a class="nav-link fw-bold fs-4" href="index.php?act=category">Category</a>
                             </li>
-                            <li class="nav-item me-4"> 
-                                <a class="nav-link fw-bold fs-4" href="index.php?act=food">Food</a>
-                            </li>
                             <li class="nav-item me-4">
+                            <a class="nav-link fw-bold fs-4" href="index.php?act=food">Food</a>
+                            </li>
+                            <li class="nav-item me-3">
                                 <a class="nav-link fw-bold fs-4" href="index.php?act=contact">Contact</a>
                             </li>
                         </ul>
-                        <form class="d-flex" role="search">
+                        <form class="d-flex ms-5" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
