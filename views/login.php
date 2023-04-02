@@ -114,7 +114,7 @@ button{
     text-decoration: underline;
 }
 .row a{
-    margin-left: 110px;
+    margin-left: 120px;
     text-decoration: none;
     color: #F2727D;
 }
@@ -148,7 +148,7 @@ button{
                     </div>
                 </form>
                 <div class="row">
-                    <a href="../index.php"><- Quay Lại</a>
+                    <a href="../index.php"><- Back</a>
                 </div>
             </div>
         </div>
