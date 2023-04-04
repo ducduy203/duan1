@@ -1,4 +1,5 @@
 <?php
+
 include "../model/PDO.php";
 include "../model/food.php";
 
@@ -21,20 +22,20 @@ include "../model/food.php";
 <body>
     <div class="product">
 
-            <?php
-				// $sp = loadone_sanpham($id);
-				if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-					$id = $_GET['id'];
-					$onefood = loadone_food($id);
-					if (!$onefood) {
-						echo "Sản phẩm không tồn tại.";
-					} else {
-						$image = $onefood['image'];
-						$name = $onefood['name'];
-						$price = $onefood['price'];
-						$description = $onefood['description'];
-				?>
-				<div class="product__photo">
+        <?php
+        // $sp = loadone_sanpham($id);
+        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+            $id = $_GET['id'];
+            $onefood = loadone_food($id);
+            if (!$onefood) {
+                echo "Sản phẩm không tồn tại.";
+            } else {
+                $image = $onefood['image'];
+                $name = $onefood['name'];
+                $price = $onefood['price'];
+                $description = $onefood['description'];
+        ?>
+                <div class="product__photo">
                     <div class="">
                         <img class="photo-main" src="<?= $image ?>" alt="green apple slice" style="height: 250px;">
                     </div>
@@ -66,26 +67,31 @@ include "../model/food.php";
                     </div>
                     <button class="buy--btn">ADD TO CART</button>
                 </div>
-					<?php } ?>
+            <?php } ?>
 
-				<?php } ?>
+        <?php } ?>
 
 
     </div>
 
     <div>
         <h2 style="color: #4c4c4c; margin-top: 2em;">Comment</h2>
+        <?php
+        foreach ($listcomment as  $comment) { ?>
+            <div>
+                <div class="user">
+                    <img class="avt" src="images/menu-pizza.jpg" alt="">
+                    <p><?= $comment['content']; ?></p>
+                </div>
+                <div style="margin-left: 20px;">
+                    <p>Món ngon</p>
+                    <p class="time">20-03-2022 12:04</p>
+                </div>
+            </div>
+        <?php } ?>
 
-        <div>
-            <div class="user">
-                <img class="avt" src="images/menu-pizza.jpg" alt="">
-                <p>Thảo Phạm</p>
-            </div>
-            <div style="margin-left: 20px;">
-                <p>Món ngon</p>
-                <p class="time">20-03-2022 12:04</p>
-            </div>
-        </div>
+
+
         <div>
             <div class="user">
                 <img class="avt" src="images/momo.jpg" alt="">
