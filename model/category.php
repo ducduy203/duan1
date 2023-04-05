@@ -1,9 +1,14 @@
 <?php
 
-function insert_category($categoryname)
+function insert_category($categoryname, $hinh)
 {
-    $sql = "insert into tbl_category(categoryname) values('$categoryname')";
-    pdo_execute($sql);
+    if ($hinh == false) {
+        $sql = "insert into tbl_category (categoryname) values ('$categoryname')";
+        pdo_execute($sql);
+    } else {
+        $sql = "insert into tbl_category(categoryname, image) values('$categoryname', '$hinh')";
+        pdo_execute($sql);
+    }
 }
 
 function delete_category($id){
@@ -20,8 +25,13 @@ function loadone_category($id){
     $category=pdo_query_one($sql);
     return $category;
 }
-function update_category($id,$categoryname){
-    $sql="update tbl_category set categoryname='".$categoryname."' where id=".$id;
-    pdo_execute($sql);
+function update_category($id,$categoryname,$save){
+    if (!$save) {
+        $sql="update tbl_category set categoryname='".$categoryname."' where id=".$id;
+        pdo_execute($sql);
+    } else {
+        $sql = "update tbl_category set categoryname='" . $categoryname . "', image='" . $save . "' WHERE id=" . $id;
+        pdo_execute($sql);
+    }
 }
 ?>

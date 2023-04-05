@@ -29,6 +29,7 @@
                                 <th class="table-danger" scope="col"><input type="checkbox" name="" id="checkboxAll"></th>
                                 <th class="table-danger" scope="col">Category Code</th>
                                 <th class="table-danger" scope="col">Category Name</th>
+                                <th class="table-danger" scope="col">Category Image</th>
                                 <th class="table-danger" scope="col"></th>
                             </tr>
                         </thead>
@@ -37,10 +38,17 @@
                                 extract($category);
                                 $updatecategory="index.php?act=updatecategory&id=".$id;
                                 $deletecategory="index.php?act=deletecategory&id=".$id;
+                                $hinhpath = "/DUAN1/admin/" . $image;
+                                if ($image) {
+                                    $hinh = "<img src='" . $hinhpath . "' height='80'>";
+                                } else {
+                                    $hinh = "no photo";
+                                }
                                 echo '<tr>
                                 <td><input type="checkbox" name="" class="chkboxname" id="checkbox'.$id.'"></td>
                                 <td>'.$id.'</td>
                                 <td>'.$categoryname.'</td>
+                                <td>'.$hinh.'</td>
                                 <td><a href="'.$updatecategory.'"><input class="btn btn-danger" type="button" value="Category Update"></a> <a href="'.$deletecategory.'"><input class="btn btn-danger" type="button" value="Delete"></a></td>
                             </tr>';
                             }

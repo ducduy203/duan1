@@ -142,7 +142,7 @@ label{
         <h1>Update Category</h1>
 
             <div class="">
-                <form action="index.php?act=updatecate" id="waterform" method="post">
+                <form action="index.php?act=updatecate" id="waterform" method="post"  enctype="multipart/form-data">
   
                     <div class="formgroup" id="name-form">
                         <label for="name">Category Code</label>
@@ -152,6 +152,10 @@ label{
                     <div class="formgroup" id="email-form">
                         <label for="email">Category Name</label>
                         <input type="text" name="categoryname" value="<?php if(isset($categoryname)&&($categoryname!="")) echo $categoryname; ?>">
+                    </div>
+					<div class="formgroup" id="">
+                        <label for="image">Category Image</label>
+                        <input type="file" name="hinh">
                     </div>
                     <h4>
                     <?php
