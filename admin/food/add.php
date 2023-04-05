@@ -1,20 +1,29 @@
 <style>
     form {
-        width: 500px;
-        margin: 300px;
+        width: 600px;
+        margin-left: 400px;
         margin-bottom: 50px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    body {
+        background-color: #f1f2f6;
+        ;
     }
 </style>
 
 <div class="row">
-    <div class="row frmtitle">
+    <div class="row center mt-4 mb-4">
         <h1>Add Food</h1>
     </div>
-    <div class="row frmcontent">
+    <div class="">
         <form action="index.php?act=addfood" method="post" enctype="multipart/form-data">
             <div>
-                Category <br>
-                <select name="category_id">
+                Category List<br>
+                <select class="form-select" name="category_id">
                     <?php
                     foreach ($listcategory as $category) {
                         extract($category);
@@ -34,7 +43,7 @@
             </div>
             <div>
                 <label class="form-label">Description</label>
-                <input type="text" class="form-control" name="description">
+                <textarea class="form-control" name="description" id="" cols="10" rows="4"></textarea>
             </div>
             <div>
                 <label class="form-label">Price</label>
