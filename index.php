@@ -1,9 +1,12 @@
 <?php
+session_start();
 include 'model/PDO.php';
 include 'model/category.php';
 include 'model/food.php';
+include 'model/comment.php';
 
 
+if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 
 if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     $act = $_GET['act'];
@@ -28,9 +31,16 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
                 $id = $_GET['id'];
                 $onefood = loadone_food($id);
                 include "views/food-detail.php";
-            }else{
+            } else {
                 include "views/home.php";
             }
+
+            $listcomment = loadOneFood_comment($_GET['id']);
+            $id_food = $_GET['id'];
+            $id_user = isset($_SESSION['username']['id']) ? $_SESSION['username']['id'] : '';
+            include "views/food-detail.php";
+            break;
+
         case 'order':
             include "views/order.php";
             break;
@@ -47,10 +57,23 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             include "views/register.php";
             break;
 
-        case 'cart':
+        case 'addtocart':
+
+            if (isset($_POST['addtocart'])) {
+                // var_dump($_POST);
+
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $hinh = $_POST['hinh'];
+                $price = $_POST['price'];
+                $quantity = 1;
+                $money = $quantity * $price;
+                $foodadd = [$id, $name, $hinh, $price, $quantity, $money];
+                array_push($_SESSION['mycart'], $foodadd);
+            }
+
             include "views/cart/viewcart.php";
             break;
-
         default:
             break;
     }
@@ -61,4 +84,3 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     include 'views/home.php';
     include 'views/footer.php';
 }
-
