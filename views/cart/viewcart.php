@@ -57,28 +57,32 @@
                   <div class="p-5">
                     <div class="d-flex justify-content-between align-items-center mb-5">
                       <h1 class="fw-bold mb-0 text-black text-danger">Shopping Cart</h1>
-                      <h6 class="mb-0 text-muted">3 items</h6>
+                      
                     </div>
-                    <hr class="my-4">
+                  
 
                     <?php
                     $total = 0;
+                    $i=0;
                     // var_dump($_SESSION['mycart']);
                     foreach ($_SESSION['mycart'] as $cart) {
+                     
                       // Kiểm tra biến $image tồn tại
                       if (isset($cart[2])) {
-                        $hinhpath = "/DUAN1/admin/";
+                        $hinhpath = "";
                         $hinh = $hinhpath . $cart[2];
                       } else {
                         $hinh = "no photo";
                       }
                       $money = $cart[4] * $cart[3];
                       $total += $money;
+                      $delete = '<a href="index.php?act=delete&idcart='.$i.'" style="color: black;"><ion-icon name="trash-outline"></ion-icon></a>';
                     ?>
-
+                     <hr class="my-4">
                       <div class="row mb-4 d-flex justify-content-between align-items-center">
                         <div class="col-md-2 col-lg-2 col-xl-2">
-                          <img src="<?= $hinh ?>" class="img-fluid rounded-3" alt="hahahahah">
+                          <img src="<?= $hinh ?>" width="100" height="100" alt="" >
+                          <!-- <a href="./admin/imgs/hhg.jpg"></a> -->
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
                           <h6 class="text-muted"><?= $cart[1] ?></h6>
@@ -90,21 +94,22 @@
                           <h6 class="mb-0"><?= $cart[3] ?></h6>
                         </div>
                         <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                          <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                        <?= $delete ?>
                         </div>
-                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                          <h6 class="mb-0"><?= $money ?></h6>
-                        </div>
+                        
                       </div>
+                      
 
-                    <?php } ?>
+                    <?php }
+                    $i+=1;
+                    ?>
 
 
 
                     <hr class="my-4">
 
                     <div class="pt-5">
-                      <h6 class="mb-0"><a href="#!" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                      <h6 class="mb-0"><a href="index.php?act=food" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
                     </div>
                   </div>
                 </div>
@@ -114,8 +119,8 @@
                     <hr class="my-4">
 
                     <div class="d-flex justify-content-between mb-4">
-                      <h5 class="text-uppercase">items 3</h5>
-                      <h5>€ 132.00</h5>
+                      <h5 class="text-uppercase">Items</h5>
+                      <h5> </h5>
                     </div>
 
                     <h5 class="text-uppercase mb-3">Shipping</h5>
@@ -133,8 +138,8 @@
 
                     <div class="mb-5">
                       <div class="form-outline">
-                        <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea2">Enter your code</label>
+                        <input placeholder="Enter your code" type="text" id="form3Examplea2" class="form-control form-control-lg" />
+                        
                       </div>
                     </div>
 
@@ -156,6 +161,7 @@
       </div>
     </div>
   </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

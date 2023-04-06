@@ -21,7 +21,7 @@
                 <a class="ms-5 fw-bold text-decoration-none my-2 text-white"> WowFood - Taste the goodness in every bite!</a>
                 
                 <div class="dropdown show me-4 my-2  d-flex" >
-                    <a href="" class="" >
+                    <a href="index.php?act=viewcart" class="" >
                             <span class="material-symbols-outlined text-light mt-2 ms-3">
                                 shopping_cart
                             </span>
