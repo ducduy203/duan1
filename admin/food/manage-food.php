@@ -23,24 +23,26 @@
                     $deletefood = "index.php?act=deletefood&id=" . $id;
                     $hinhpath = "/DUAN1/admin/" . $image;
                     if ($image) {
-                        $hinh = "<img src='" . $hinhpath . "' height='80'>";
+                        $hinh = "<img src='" . $hinhpath . "' height='80'; width='80'>";
                     } else {
                         $hinh = "no photo";
                     }
                     echo '<tr>
-                        <td><input type="checkbox" name="" id=""></td>
-                        <td>' . $id . '</td>
-                        <td>' . $name . '</td>
-                        <td>' . $description . '</td>
-                        <td>' . $price . '</td>
+                        <td><input type="checkbox" name="" id="" class="mt-4"></td>
+                        <td><div class="mt-4">' . $id . '</div></td>
+                        <td><div class="mt-3">' . $name . '</div></td>
+                        <td><div class="mt-3">' . $description . '</div></td>
+                        <td><div class="mt-4">' . $price . '</div></td>
                         <td>' . $hinh . '</td>
                         <td>
+                            <div class="mt-3" style="display: grid; gap: 4px; grid-template-columns: 1fr 1fr">
                             <a href="' . $updatefood . '">
                                 <input class="btn btn-danger" type="button" value="Update">
                             </a>
                             <a href="' . $deletefood . '">
                                 <input class="btn btn-danger" onclick="return confirm(`Are you sure?`);" type="button" value="Delete">
                             </a>
+                            </div>
                         </td>
                     </tr>';
                 }
@@ -48,9 +50,6 @@
             </tbody>
         </table>
         <div class="input">
-            <input type="button" class="btn btn-danger" value="Select All">
-            <input type="button" class="btn btn-danger" value="Deselect All">
-            <input type="button" class="btn btn-danger" value="Delete Selected">
             <a href="index.php?act=addfood"><input type="button" class="btn btn-danger" value="Add More"></a>
         </div>
     </div>

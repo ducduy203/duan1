@@ -25,19 +25,22 @@
                     $hinh = "no photo";
                 }
                 echo '<tr>
-                                <td><input type="checkbox" name="" class="chkboxname" id="checkbox' . $id . '"></td>
-                                <td>' . $id . '</td>
-                                <td>' . $categoryname . '</td>
+                                <td><input type="checkbox" name="" class="chkboxname mt-4"  id="checkbox' . $id . '"></td>
+                                <td><div class="mt-4">' . $id . '</div></td>
+                                <td><div class="mt-4">' . $categoryname . '</div></td>
                                 <td>' . $hinh . '</td>
-                                <td><a href="' . $updatecategory . '"><input class="btn btn-danger" type="button" value="Category Update"></a> <a href="' . $deletecategory . '"><input class="btn btn-danger" type="button" value="Delete"></a></td>
+                                
+                                <td>
+                                <div class="mt-3">
+                                <a href="' . $updatecategory . '"><input class="btn btn-danger" type="button" value="Category Update"></a> <a href="' . $deletecategory . '"><input class="btn btn-danger" type="button" value="Delete">
+                                </a>
+                                </div>
+                                </td>
                             </tr>';
             }
             ?>
         </table>
         <div class="input">
-            <input type="button" class="btn btn-danger" value="Select All">
-            <input type="button" class="btn btn-danger" value="Deselect All">
-            <input type="button" class="btn btn-danger" value="Delete Selected">
             <a href="index.php?act=addcategory"><input type="button" class="btn btn-danger" value="Add More"></a>
         </div>
     </div>

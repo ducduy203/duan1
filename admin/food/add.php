@@ -57,8 +57,8 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
-            <input type="submit" class="btn btn-primary" name="add" value="Thêm Mới">
-            <a href="index.php?act=listfood"><input type="button" class="btn btn-primary" value="Danh Sách"></a>
+            <input type="submit" class="btn btn-primary" name="add" value="Add New">
+            <a href="index.php?act=listfood"><input type="button" class="btn btn-primary" value="List"></a>
             <?php
             if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
             ?>
