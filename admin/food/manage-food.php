@@ -47,6 +47,11 @@
                 ?>
             </tbody>
         </table>
-
+        <div class="input">
+            <input type="button" class="btn btn-danger" value="Select All">
+            <input type="button" class="btn btn-danger" value="Deselect All">
+            <input type="button" class="btn btn-danger" value="Delete Selected">
+            <a href="index.php?act=addfood"><input type="button" class="btn btn-danger" value="Add More"></a>
+        </div>
     </div>
 </div>

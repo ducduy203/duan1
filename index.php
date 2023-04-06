@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include 'model/PDO.php';
@@ -6,7 +7,7 @@ include 'model/food.php';
 include 'model/comment.php';
 
 
-if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
+if (!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
 if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     $act = $_GET['act'];
@@ -57,9 +58,13 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             include "views/register.php";
             break;
 
+        case 'viewcart':
+            include "views/cart/viewcart.php";
+            break;
+
         case 'addtocart':
 
-            if (isset($_POST['addtocart'])) {
+            if (isset($_POST['addtocart'])){
                 // var_dump($_POST);
 
                 $id = $_POST['id'];
@@ -74,6 +79,15 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
 
             include "views/cart/viewcart.php";
             break;
+
+            case 'delete': 
+                if(isset($_GET['idcart'])){
+                    array_splice($_SESSION['mycart'],$_GET['idcart'],1);
+                }else{
+                    $_SESSION['mycart']=[];
+                }
+                header('location: index.php?act=viewcart');
+                break;
         default:
             break;
     }
