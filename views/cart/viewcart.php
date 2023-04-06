@@ -57,16 +57,16 @@
                   <div class="p-5">
                     <div class="d-flex justify-content-between align-items-center mb-5">
                       <h1 class="fw-bold mb-0 text-black text-danger">Shopping Cart</h1>
-                      
+
                     </div>
-                  
+
 
                     <?php
                     $total = 0;
-                    $i=0;
+                    $i = 0;
                     // var_dump($_SESSION['mycart']);
                     foreach ($_SESSION['mycart'] as $cart) {
-                     
+
                       // Kiểm tra biến $image tồn tại
                       if (isset($cart[2])) {
                         $hinhpath = "";
@@ -76,32 +76,34 @@
                       }
                       $money = $cart[4] * $cart[3];
                       $total += $money;
-                      $delete = '<a href="index.php?act=delete&idcart='.$i.'" style="color: black;"><ion-icon name="trash-outline"></ion-icon></a>';
+                      $delete = '<a href="index.php?act=delete&idcart=' . $i . '" style="color: black;"><ion-icon name="trash-outline"></ion-icon></a>';
                     ?>
-                     <hr class="my-4">
+                      <hr class="my-4">
                       <div class="row mb-4 d-flex justify-content-between align-items-center">
                         <div class="col-md-2 col-lg-2 col-xl-2">
-                          <img src="<?= $hinh ?>" width="100" height="100" alt="" >
-                          <!-- <a href="./admin/imgs/hhg.jpg"></a> -->
+                          <img src="<?= $hinh ?>" width="100" height="100" alt="">
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
                           <h6 class="text-muted"><?= $cart[1] ?></h6>
                         </div>
-                        <div class="col-md-3 col-lg-3 col-xl-3">
+                        <!-- <div class="col-md-3 col-lg-3 col-xl-3">
                           <h6 class="text-muted"><?= $cart[4] ?></h6>
+                        </div> -->
+
+                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                          <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
                         </div>
+
                         <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                           <h6 class="mb-0"><?= $cart[3] ?></h6>
                         </div>
                         <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                        <?= $delete ?>
+                          <?= $delete ?>
                         </div>
-                        
                       </div>
-                      
 
                     <?php }
-                    $i+=1;
+                    $i += 1;
                     ?>
 
 
@@ -139,7 +141,7 @@
                     <div class="mb-5">
                       <div class="form-outline">
                         <input placeholder="Enter your code" type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                        
+
                       </div>
                     </div>
 
@@ -162,6 +164,7 @@
     </div>
   </section>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
