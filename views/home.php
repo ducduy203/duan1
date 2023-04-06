@@ -1,13 +1,13 @@
 <div id="carouselExampleAutoplaying" class="container carousel slide px-3" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-        <img src="views/images/banner1.jpg" class="d-block w-100" style="height: 400px" alt="">
+        <div class="carousel-item active" data-bs-interval="3000">
+            <img src="views/images/banner1.jpg" class="d-block w-100" style="height: 400px" alt="">
         </div>
-        <div class="carousel-item">
-        <img src="views/images/banner2.jpg" class="d-block w-100" style="height: 400px" alt="">
+        <div class="carousel-item" data-bs-interval="3000">
+            <img src="views/images/banner2.jpg" class="d-block w-100" style="height: 400px" alt="">
         </div>
-        <div class="carousel-item">
-        <img src="views/images/banner3.jpg" class="d-block w-100" style="height: 400px" alt="">
+        <div class="carousel-item" data-bs-interval="3000">
+            <img src="views/images/banner3.jpg" class="d-block w-100" style="height: 400px" alt="">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -25,28 +25,28 @@
         <div class="container text-center">
             <div class="row row-cols-auto ">
                 <?php
-                foreach ($listcategory as $category ) {
-                    extract ($category);
+                foreach ($listcategory as $category) {
+                    extract($category);
                     if ($image) {
                         $hinhpath = "/DUAN1/admin/" . $image;
                         $hinh = $hinhpath;
                     } else {
                         $hinh = "no photo";
                     }
-                
+
                 ?>
-                <div class="col border rounded bg-dark-subtle me-5">
-                    <div class="border rounded-circle bg-body mt-4 mb-3">
-                    <img src="<?=$hinh?>" alt=""class="img-responsive m-4" style="width: 70px; height: 70px">
+                    <div class="col border rounded bg-dark-subtle me-5">
+                        <div class="border rounded-circle bg-body mt-4 mb-3">
+                            <img src="<?= $hinh ?>" alt="" class="img-responsive m-4" style="width: 70px; height: 70px">
+                        </div>
+                        <div class="mb-4">
+                            <a href="" class="text-decoration-none text-black fw-bold fs-5"><?= $categoryname ?></a>
+                        </div>
                     </div>
-                    <div class="mb-4">
-                    <a href="" class="text-decoration-none text-black fw-bold fs-5"><?=$categoryname?></a>
-                    </div>
-                </div>
                 <?php } ?>
             </div>
         </div>
-        
+
         <div class="clearfix"></div>
     </div>
 </section>
