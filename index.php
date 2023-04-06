@@ -1,13 +1,13 @@
-
 <?php
 session_start();
 include 'model/PDO.php';
 include 'model/category.php';
 include 'model/food.php';
 include 'model/comment.php';
+include 'model/user.php';
 
 
-if (!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
+if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 
 if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     $act = $_GET['act'];
@@ -51,11 +51,33 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             break;
 
         case 'login':
-            include "views/login.php";
+            if (isset($_POST['login']) && ($_POST['login'] > 0)) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $checkuser = checkuser($username, $password);
+                if (is_array($checkuser)) {
+                    $_SESSION['user'] = $checkuser;
+                    header('Location: index.php');
+                } else {
+                    $thongbao = "Account does not exist";
+                }
+            }
+            include "views/account/login.php";
+            break;
+
+        case 'logout':
+            include "views/account/logout.php";
             break;
 
         case 'register':
-            include "views/register.php";
+            if (isset($_POST['register']) && ($_POST['register'] > 0)) {
+                $email = $_POST['email'];
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                insert_user($email, $username, $password);
+                $thongbao = "Sign Up Success";
+            }
+            include "views/account/register.php";
             break;
 
         case 'viewcart':
@@ -63,10 +85,7 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             break;
 
         case 'addtocart':
-
-            if (isset($_POST['addtocart'])){
-                // var_dump($_POST);
-
+            if (isset($_POST['addtocart'])) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $hinh = $_POST['hinh'];
@@ -80,21 +99,21 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             include "views/cart/viewcart.php";
             break;
 
-            case 'delete': 
-                if(isset($_GET['idcart'])){
-                    array_splice($_SESSION['mycart'],$_GET['idcart'],1);
-                }else{
-                    $_SESSION['mycart']=[];
-                }
-                header('location: index.php?act=viewcart');
-                break;
+        case 'delete':
+            if (isset($_GET['idcart'])) {
+                array_splice($_SESSION['mycart'], $_GET['idcart'], 1);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+            header('location: index.php?act=viewcart');
+            break;
         default:
             break;
     }
 } else {
     include 'views/header.php';
-    $listcategory=loadall_category();
-    $listfood=loadall_food_home();
+    $listcategory = loadall_category();
+    $listfood = loadall_food_home();
     include 'views/home.php';
     include 'views/footer.php';
 }

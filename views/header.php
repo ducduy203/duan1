@@ -17,68 +17,86 @@
 <body>
 
     <!-- Navbar Section Starts Here -->
-            <div class="navbar bg-dark">
-                <a class="ms-5 fw-bold text-decoration-none my-2 text-white"> WowFood - Taste the goodness in every bite!</a>
-                
-                <div class="dropdown show me-4 my-2  d-flex" >
-                    <a href="index.php?act=viewcart" class="" >
-                            <span class="material-symbols-outlined text-light mt-2 ms-3">
-                                shopping_cart
-                            </span>
-                    </a>
-                    &ensp; &ensp;
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account
-                    </a>
+    <div class="navbar bg-dark">
+        <a class="ms-5 fw-bold text-decoration-none my-2 text-white"> WowFood - Taste the goodness in every bite!</a>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item d-flex" href="index.php?act=login">Login
-                            <span class="ms-2 material-symbols-outlined">
-                            login
+        <div class="dropdown show me-4 my-2  d-flex">
+            <a href="index.php?act=viewcart" class="">
+                <span class="material-symbols-outlined text-light mt-2 ms-3">
+                    shopping_cart
+                </span>
+            </a>
+            &ensp; &ensp;
+            <?php
+            if (isset($_SESSION['user'])) {
+                extract($_SESSION['user']);
+            ?>
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hello, <?= $username ?>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="margin-top: 40px; margin-left: 35px;">
+                    <button onclick="return confirm(`Are you sure?`);" style="border: none; background-color: white;">
+                        <a class="dropdown-item d-flex" href="index.php?act=logout">Logout
+                            <span class=" ms-2 material-symbols-outlined">
+                                logout
                             </span>
                         </a>
-                        
-                        <a class="dropdown-item d-flex" href="#">Logout 
+                    </button>
+                </div>
+            <?php } else { ?>
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Account
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="margin-top: 40px; margin-left: 35px;">
+                    <a class="dropdown-item d-flex" href="index.php?act=login">Login
+                        <span class="ms-2 material-symbols-outlined">
+                            login
+                        </span>
+                    </a>
+
+                    <a class="dropdown-item d-flex" href="#">Logout
                         <span class=" ms-2 material-symbols-outlined">
                             logout
                         </span>
-                        </a>
-                        <!-- <a class="dropdown-item" href="#">Registerin</a> -->
-                    </div>
+                    </a>
                 </div>
-            </div>
+            <?php } ?>
+
+        </div>
+    </div>
     <section class="navbar">
         <div class="container" style="display: grid; grid-template-columns: 1fr 2fr">
             <img src="views/images/logo.png" alt="Restaurant Logo" class="">
 
             <nav class="navbar navbar-expand-xxl navbar-light">
-                    <div class="collapse navbar-collapse " id="navbarNavDropdown">
-                        <ul class="navbar-nav pe-5">
-                            <li class="nav-item me-4">
-                                <a class="nav-link active fw-bold fs-4" aria-current="page" href="index.php">Home</a>
-                            </li>
-                            <li class="nav-item me-4">
-                                <a class="nav-link fw-bold fs-4" href="index.php?act=category">Category</a>
-                            </li>
-                            <li class="nav-item me-4">
+                <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                    <ul class="navbar-nav pe-5">
+                        <li class="nav-item me-4">
+                            <a class="nav-link active fw-bold fs-4" aria-current="page" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link fw-bold fs-4" href="index.php?act=category">Category</a>
+                        </li>
+                        <li class="nav-item me-4">
                             <a class="nav-link fw-bold fs-4" href="index.php?act=food">Food</a>
-                            </li>
-                            <li class="nav-item me-3">
-                                <a class="nav-link fw-bold fs-4" href="index.php?act=contact">Contact</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex ms-5" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link fw-bold fs-4" href="index.php?act=contact">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex ms-5" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
                 </div>
-            </nav>
+        </div>
+        </nav>
         </div>
     </section>
 
-    
-    
+
+
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
