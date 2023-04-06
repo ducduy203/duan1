@@ -93,7 +93,8 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     }
 } else {
     include 'views/header.php';
-    $listfood = loadall_food_home();
+    $listcategory=loadall_category();
+    $listfood=loadall_food_home();
     include 'views/home.php';
     include 'views/footer.php';
 }
