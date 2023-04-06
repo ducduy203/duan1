@@ -53,7 +53,7 @@ if (is_array($food)) {
             <input type="hidden" name="id" id="" value="<?php if (isset($id) && ($id > 0)) echo $id; ?>">
             <input type="submit" class="btn btn-primary" name="update" value="Cập nhật">
             <a href="index.php?act=listfood"><input type="button" class="btn btn-primary" value="Danh Sách"></a>
-            <input type="reset" value="Nhập Lại">
+            <input type="reset" class="btn btn-primary" name="reset" value="Reset">
             <?php
             if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
             ?>

@@ -176,7 +176,7 @@
                 <textarea name="address" rows="10" placeholder="Address" class="input-responsive" required></textarea>
 
                 <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary"> &ensp;
-                <input type="submit" name="Back" value="Back" class="btn btn-primary">
+                <a href="index.php?act=food" type="submit" name="Back" value="Back" class="btn btn-primary" style="text-decoration: none;">Back</a>
 
             </fieldset>
 
