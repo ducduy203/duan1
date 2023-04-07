@@ -166,7 +166,7 @@
                         <input type="email" name="email" value="<?= $email ?>" required>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="call-outline"></ion-icon>
+                        <ion-icon name="person-outline"></ion-icon>
                         <label for="">Username</label>
                         <input type="text" name="username" value="<?= $username ?>" required>
                     </div>
@@ -176,12 +176,12 @@
                         <input type="password" name="password" value="<?= $password ?>" required>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <ion-icon name="location-outline"></ion-icon>
                         <label for="">Address</label>
                         <input type="text" name="address" value="<?= $address ?>" required>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <ion-icon name="call-outline"></ion-icon>
                         <label for="">Tel</label>
                         <input type="text" name="tel" value="<?= $tel ?>" required>
                     </div>
@@ -194,7 +194,7 @@
                     </div>
                     <div class="register">
                         <input type="hidden" name="id" id="" value="<?php if (isset($id) && ($id > 0)) echo $id; ?>">
-                        <p><a href="index.php"><-- Back to home page</a></p>
+                        <p><a style="text-decoration: none;" href="index.php"><-- Back to home page</a></p>
                     </div>
                 </form>
             </div>

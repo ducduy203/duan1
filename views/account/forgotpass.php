@@ -186,7 +186,7 @@ top: -5px;
                     </div>
                 </form>
                 <div class="row">
-                    <a href="index.php"><- Back</a>
+                    <a href="index.php?act=login"><- Back</a>
                 </div>
             </div>
         </div>
