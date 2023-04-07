@@ -4,12 +4,13 @@ include '../model/PDO.php';
 include '../model/user.php';
 include '../model/category.php';
 include '../model/food.php';
-function test_input($data) {
+function test_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
-  }
+}
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -26,41 +27,39 @@ if (isset($_GET['act'])) {
             include "user/manage-user.php";
             break;
 
-            case 'addcategory':
-                if (isset($_POST['addnew']) && ($_POST['addnew'])) {
-                    $categoryname = $_POST['categoryname'];
-                    $categorynameErr = "";
-                    $categoryname = "";
-    
-                    $image = $_FILES['hinh'];
-                    if (empty($_POST["categoryname"])) {
-                        $categorynameErr = "Name is required";
-                    } else {
-                        $categoryname = test_input($_POST["categoryname"]);
-                        if (!preg_match("/^[a-zA-Z-' ]*$/", $categoryname)) {
-                            $categorynameErr = "Only letters and white space allowed";
-                        }
+        case 'addcategory':
+            if (isset($_POST['addnew']) && ($_POST['addnew'])) {
+                $categoryname = $_POST['categoryname'];
+                $categorynameErr = "";
+                $categoryname = "";
+
+                $image = $_FILES['hinh'];
+                if (empty($_POST["categoryname"])) {
+                    $categorynameErr = "Name is required";
+                } else {
+                    $categoryname = test_input($_POST["categoryname"]);
+                    if (!preg_match("/^[a-zA-Z-' ]*$/", $categoryname)) {
+                        $categorynameErr = "Only letters and white space allowed";
                     }
-                    if (empty($categorynameErr)) {
-                        if ($image['size'] == 0) {
-                            $hinh = false;
-                            insert_category($categoryname, $hinh);
-                            $thongbao = "Successfully Added New";
-                        } else {
-                            $hinh = 'imgs/' . basename($image['name']);
-                            if (move_uploaded_file($image["tmp_name"], $hinh)) {
-                                insert_category($categoryname, $hinh);
-                                $thongbao = "Successfully Added New";
-                            }
-                        }
+                }
+                if (empty($categorynameErr)) {
+                    if ($image['size'] == 0) {
+                        $hinh = false;
                         insert_category($categoryname, $hinh);
                         $thongbao = "Successfully Added New";
+                    } else {
+                        $hinh = 'imgs/' . basename($image['name']);
+                        if (move_uploaded_file($image["tmp_name"], $hinh)) {
+                            insert_category($categoryname, $hinh);
+                            $thongbao = "Successfully Added New";
+                        }
                     }
-                    
-                    
+                    insert_category($categoryname, $hinh);
+                    $thongbao = "Successfully Added New";
                 }
-                include "category/add-category.php";
-                break;
+            }
+            include "category/add-category.php";
+            break;
 
         case 'listcategory':
             $listcategory = loadall_category();
@@ -88,24 +87,23 @@ if (isset($_GET['act'])) {
                 $image = $_FILES['hinh'];
                 if ($image['size'] == 0) {
                     $save = false;
-                    update_category($id,$categoryname,$save);
+                    update_category($id, $categoryname, $save);
                 } else {
                     $save = 'imgs/' . basename($image['name']);
                     if (move_uploaded_file($image["tmp_name"], $save)) {
-                        update_category($id,$categoryname,$save);
+                        update_category($id, $categoryname, $save);
                     }
                 }
-                update_category($id,$categoryname,$save);
+                update_category($id, $categoryname, $save);
                 $thongbao = "Cập nhật thành công";
             }
-            
-                    
+
+
             $listcategory = loadall_category();
             include "category/list-category.php";
             break;
 
         case 'addfood':
-            // ktra xem người dùng có click vào nút add hay không
             if (isset($_POST['add']) && ($_POST['add'])) {
                 $category_id = $_POST['category_id'];
                 $name = $_POST['name'];

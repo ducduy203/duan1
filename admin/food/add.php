@@ -29,7 +29,6 @@
                         extract($category);
                         echo '<option value="' . $id . '">' . $categoryname . '</option>';
                     }
-
                     ?>
                 </select>
             </div>
