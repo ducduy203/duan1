@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'partials/menu.php';
 include '../model/PDO.php';
 include '../model/user.php';

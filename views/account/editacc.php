@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Login - WowFood</title>
+    <title>Registerin - WowFood</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
@@ -16,7 +16,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            min-height: 140vh;
             width: 100%;
 
             background: url('views/images/banner.jpg')no-repeat;
@@ -27,7 +27,7 @@
         .form-box {
             position: relative;
             width: 400px;
-            height: 550px;
+            height: 830px;
             background: transparent;
             border: 2px solid rgba(255, 255, 255, 0.5);
             border-radius: 20px;
@@ -51,15 +51,19 @@
             border-bottom: 2px solid #fff;
         }
 
+        .inputtb {
+            position: relative;
+            margin: 30px 0;
+            width: 310px;
+            color: chartreuse;
+            text-align: center;
+        }
+
         .inputbox label {
             color: #fff;
             font-size: 1em;
         }
 
-        /* input:focus ~ label,
-input:valid ~ label{
-top: -5px;
-} */
         .inputbox input {
             width: 100%;
             height: 50px;
@@ -70,6 +74,7 @@ top: -5px;
             padding: 0 35px 0 5px;
             color: #fff;
         }
+
 
         .inputbox ion-icon {
             position: absolute;
@@ -113,15 +118,7 @@ top: -5px;
             font-weight: 600;
         }
 
-        .inputtb {
-            position: relative;
-            margin: 30px 0;
-            width: 310px;
-            color: red;
-            text-align: center;
-        }
-
-        .btn-lg {
+        .btn-re {
             width: 100%;
             height: 40px;
             border-radius: 40px;
@@ -131,7 +128,6 @@ top: -5px;
             cursor: pointer;
             font-size: 1em;
             font-weight: 600;
-            text-align: center;
         }
 
         .register {
@@ -150,12 +146,6 @@ top: -5px;
         .register p a:hover {
             text-decoration: underline;
         }
-
-        .row a {
-            margin-left: 120px;
-            text-decoration: none;
-            color: #F2727D;
-        }
     </style>
 </head>
 
@@ -163,44 +153,56 @@ top: -5px;
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="index.php?act=login" method="post">
-                    <h2>Login</h2>
+                <?php
+                if (isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
+                    extract($_SESSION['user']);
+                }
+                ?>
+                <form action="index.php?act=editacc" method="post">
+                    <h2>Edit Account</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
+                        <label for="">Email</label>
+                        <input type="email" name="email" value="<?= $email ?>" required>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="call-outline"></ion-icon>
                         <label for="">Username</label>
-                        <input type="text" name="username" required>
-
+                        <input type="text" name="username" value="<?= $username ?>" required>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <label for="">Password</label>
-                        <input type="password" name="password" required>
+                        <input type="password" name="password" value="<?= $password ?>" required>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <label for="">Address</label>
+                        <input type="text" name="address" value="<?= $address ?>" required>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <label for="">Tel</label>
+                        <input type="text" name="tel" value="<?= $tel ?>" required>
+                    </div>
+                    <input class="btn-re" type="submit" name="update" value="Update">
 
-                    </div>
-                    <div class="forget">
-                        <label for="">
-                            <input type="checkbox">Remember Me
-                            <a style="margin-left: 10px; text-decoration: underline;" href="index.php?act=forgotpass">Forgot Password</a>
-                        </label>
-                    </div>
-                    <input type="submit" class="btn-lg" name="login" value="Log in">
                     <div class="inputtb">
                         <?php
                         if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
                         ?>
                     </div>
                     <div class="register">
-                        <p>Don't have a account? <a href="index.php?act=register">Register</a></p>
+                        <input type="hidden" name="id" id="" value="<?php if (isset($id) && ($id > 0)) echo $id; ?>">
+                        <p><a href="index.php"><-- Back to home page</a></p>
                     </div>
                 </form>
-                <div class="row">
-                    <a href="index.php"><- Back</a>
-                </div>
             </div>
         </div>
     </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 
 </html>

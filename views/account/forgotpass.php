@@ -163,27 +163,19 @@ top: -5px;
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="index.php?act=login" method="post">
-                    <h2>Login</h2>
+                <form action="index.php?act=forgotpass" method="post">
+                    <h2>Forgot Password</h2>
+                    <p style="color: white; margin-top: 20px"><i>Enter email to receive code:</i></p>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <label for="">Username</label>
-                        <input type="text" name="username" required>
-
-                    </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <label for="">Password</label>
-                        <input type="password" name="password" required>
+                        <label for="">Email</label>
+                        <input type="text" name="email" required>
 
                     </div>
                     <div class="forget">
-                        <label for="">
-                            <input type="checkbox">Remember Me
-                            <a style="margin-left: 10px; text-decoration: underline;" href="index.php?act=forgotpass">Forgot Password</a>
-                        </label>
+                        <label for=""><input type="checkbox">Remember Me
                     </div>
-                    <input type="submit" class="btn-lg" name="login" value="Log in">
+                    <input type="submit" class="btn-lg" name="sendcode" value="Send code">
                     <div class="inputtb">
                         <?php
                         if (isset($thongbao) && ($thongbao != "")) echo $thongbao;

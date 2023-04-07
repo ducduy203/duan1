@@ -34,15 +34,25 @@
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Hello, <?= $username ?>
                 </a>
-
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="margin-top: 40px; margin-left: 35px;">
+                    <a class="dropdown-item d-flex" href="index.php?act=editacc">
+                        Edit Acount
+                    </a>
                     <button onclick="return confirm(`Are you sure?`);" style="border: none; background-color: white;">
+
                         <a class="dropdown-item d-flex" href="index.php?act=logout">Logout
                             <span class=" ms-2 material-symbols-outlined">
-                                logout
+                                Logout
                             </span>
                         </a>
                     </button>
+                    <?php
+                    if ($role == 1) { ?>
+                        <a class="dropdown-item d-flex" href="admin">
+                            Login Admin
+                        </a>
+                    <?php } ?>
+
                 </div>
             <?php } else { ?>
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,13 +61,13 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="margin-top: 40px; margin-left: 35px;">
                     <a class="dropdown-item d-flex" href="index.php?act=login">Login
                         <span class="ms-2 material-symbols-outlined">
-                            login
+                            Login
                         </span>
                     </a>
 
                     <a class="dropdown-item d-flex" href="#">Logout
                         <span class=" ms-2 material-symbols-outlined">
-                            logout
+                            Logout
                         </span>
                     </a>
                 </div>

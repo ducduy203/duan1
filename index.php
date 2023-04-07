@@ -50,6 +50,17 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             include "views/contact.php";
             break;
 
+        case 'register':
+            if (isset($_POST['register']) && ($_POST['register'] > 0)) {
+                $email = $_POST['email'];
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                insert_user($email, $username, $password);
+                $thongbao = "Sign Up Success";
+            }
+            include "views/account/register.php";
+            break;
+
         case 'login':
             if (isset($_POST['login']) && ($_POST['login'] > 0)) {
                 $username = $_POST['username'];
@@ -66,18 +77,37 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             break;
 
         case 'logout':
-            include "views/account/logout.php";
+            session_destroy();
+            header("Location: index.php");
             break;
 
-        case 'register':
-            if (isset($_POST['register']) && ($_POST['register'] > 0)) {
+        case 'editacc':
+            if (isset($_POST['update']) && ($_POST['update'] > 0)) {
                 $email = $_POST['email'];
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-                insert_user($email, $username, $password);
-                $thongbao = "Sign Up Success";
+                $address = $_POST['address'];
+                $tel = $_POST['tel'];
+                $id = $_POST['id'];
+
+                update_user($id, $email, $username, $password, $address, $tel);
+                $thongbao = "Account update successful";
+                $_SESSION['user'] = checkuser($username, $password);
             }
-            include "views/account/register.php";
+            include "views/account/editacc.php";
+            break;
+
+        case 'forgotpass':
+            if (isset($_POST['sendcode']) && ($_POST['sendcode'] > 0)) {
+                $email = $_POST['email'];
+                $email = checkemail($email);
+                if (is_array($email)) {
+                    $thongbao = "Your password: " . $email['password'];
+                } else {
+                    $thongbao = "Email does not exist";
+                }
+            }
+            include "views/account/forgotpass.php";
             break;
 
         case 'viewcart':
