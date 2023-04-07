@@ -101,7 +101,7 @@
 
     </div>
 
-    <p class="text-center">
-        <a href="#">See All Foods</a>
+    <p class="text-center mt-5">
+        <a href="index.php?act=food" class="text-decoration-none fs-4 fw-medium">See All Foods</a>
     </p>
 </section>

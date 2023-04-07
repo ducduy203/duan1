@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/6900a52b5c.js" crossorigin="anonymous"></script>
   <title>ViewCart</title>
 </head>
 <style>
@@ -60,7 +61,6 @@
 
                     </div>
 
-
                     <?php
                     $total = 0;
                     $i = 0;
@@ -74,6 +74,7 @@
                       } else {
                         $hinh = "no photo";
                       }
+                      
                       $money = $cart[4] * $cart[3];
                       $total += $money;
                       $delete = '<a href="index.php?act=delete&idcart=' . $i . '" style="color: black;"><ion-icon name="trash-outline"></ion-icon></a>';
@@ -86,16 +87,18 @@
                         <div class="col-md-3 col-lg-3 col-xl-3">
                           <h6 class="text-muted"><?= $cart[1] ?></h6>
                         </div>
-                        <!-- <div class="col-md-3 col-lg-3 col-xl-3">
-                          <h6 class="text-muted"><?= $cart[4] ?></h6>
-                        </div> -->
-
-                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                          <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
+                        <div class="d-flex justify-content-center align-items-center col-md-3 col-lg-3 col-xl-3">
+                          <button onclick="minus()" name="minus" class="border border-0"><i class="fa-solid fa-minus"></i></button>
+                          <input type="text" class="text-muted text-center border-0" style="width:25%" id="amount" name="amount" value="1">
+                          <button onclick="plus()" name="plus" class="border border-0"><i class="fa-solid fa-plus"></i></button>
                         </div>
 
+                        <!-- <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                          <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" />
+                        </div> -->
+
                         <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                          <h6 class="mb-0"><?= $cart[3] ?></h6>
+                          <h6 class="mb-0"><?= $cart[5] ?></h6>
                         </div>
                         <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                           <?= $delete ?>
@@ -105,6 +108,27 @@
                     <?php }
                     $i += 1;
                     ?>
+                    <script>
+                        let amountElement = document.getElementById('amount')
+                        let amount= amountElement.value
+                        let render =(amount)=>{
+                          amountElement.value = amount
+                        }
+                        let plus=()=>{
+                          amount++
+                          render(amount);
+                        }
+                        let minus=()=>{
+                          if(amount>0)
+                          amount--
+                          render(amount);
+                        }
+                        amountElement.addEventListener('input',()=>{
+                          amount = amountElement.value;
+                          amount = parseInt(amount);
+                          console.log(amount);
+                        });
+                    </script>
 
 
 
