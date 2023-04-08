@@ -37,7 +37,7 @@
                 ?>
                     <div class="col border rounded bg-dark-subtle me-5">
                         <div class="border rounded-circle bg-body mt-4 mb-3">
-                            <img src="<?= $hinh ?>" alt="" class="img-responsive m-4" style="width: 70px; height: 70px">
+                            <img src="<?= $hinh ?>" alt="" class="img-responsive m-4" style="width: 62px; height: 70px;">
                         </div>
                         <div class="mb-4">
                             <a href="" class="text-decoration-none text-black fw-bold fs-5"><?= $categoryname ?></a>
@@ -69,7 +69,7 @@
         ?>
             <form action="index.php?act=addtocart&id=<?php echo $id; ?>" method="post" class="food-menu-box" style="margin: 30px 0 0 50px">
                 <a href="index.php?act=food-detail&id=<?php echo $id; ?>" class="food-menu-img">
-                    <img src="<?= $hinh ?>" width="120px" height="120px">
+                    <img src="<?= $hinh ?>" width="120px" height="120px" class="rounded-4">
                 </a>
 
                 <div class="food-menu-desc">
@@ -80,7 +80,7 @@
                     <input type="hidden" name="hinh" value="<?= $hinh ?>">
 
 
-                    <a href="views/food-detail.php?id=<?php echo $id; ?>" style="text-decoration: none; color: #ff6b81">
+                    <a href="index.php?act=food-detail&id=<?php echo $id; ?>" style="text-decoration: none; color: #ff6b81">
                         <h4><?= $name ?></h4>
                     </a>
                     <p class="food-price"><?= $price ?> đ</p>

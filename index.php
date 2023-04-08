@@ -31,15 +31,14 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
                 $onefood = loadone_food($id);
+                $listcomment = loadOneFood_comment($_GET['id']);
+                $id_food = $_GET['id'];
+                $id_user = isset($_SESSION['username']['id']) ? $_SESSION['username']['id'] : '';
                 include "views/food-detail.php";
             } else {
                 include "views/home.php";
             }
-
-            $listcomment = loadOneFood_comment($_GET['id']);
-            $id_food = $_GET['id'];
-            $id_user = isset($_SESSION['username']['id']) ? $_SESSION['username']['id'] : '';
-            include "views/food-detail.php";
+            // include "views/food-detail.php";
             break;
 
         case 'order':

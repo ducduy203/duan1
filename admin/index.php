@@ -55,7 +55,6 @@ if (isset($_GET['act'])) {
                             $thongbao = "Successfully Added New";
                         }
                     }
-                    insert_category($categoryname, $hinh);
                     $thongbao = "Successfully Added New";
                 }
             }
@@ -184,6 +183,7 @@ if (isset($_GET['act'])) {
             break;
     }
 } else {
+    include 'partials/home.php';
 }
 
 include 'partials/footer.php';

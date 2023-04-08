@@ -32,7 +32,8 @@
                                 
                                 <td>
                                 <div class="mt-3">
-                                <a href="' . $updatecategory . '"><input class="btn btn-danger" type="button" value="Category Update"></a> <a href="' . $deletecategory . '"><input class="btn btn-danger" type="button" value="Delete">
+                                <a href="' . $updatecategory . '"><input class="btn btn-danger" type="button" value="Category Update"></a>
+                                <a href="' . $deletecategory . '"><input class="btn btn-danger" onclick="return confirm(`Are you sure?`);" type="button" value="Delete">
                                 </a>
                                 </div>
                                 </td>

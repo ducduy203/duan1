@@ -19,7 +19,7 @@
 	<div class="row center mt-4 mb-4">
 		<h1>Add Category</h1>
 	</div>
-	<div class="">
+	<div class="" style="margin-bottom: 150px;">
 		<form action="index.php?act=addcategory" method="post" enctype="multipart/form-data">
 			<div>
 				<label class="form-label">Category ID</label>

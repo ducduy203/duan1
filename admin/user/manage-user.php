@@ -1,7 +1,7 @@
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage User</h1>
-        <table class="table">
+        <table class="table mt-5" style="margin-bottom: 200px;">
             <thead>
                 <tr>
                     <th class="table-danger" scope="col"></th>
