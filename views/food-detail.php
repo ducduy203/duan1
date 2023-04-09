@@ -1,120 +1,123 @@
-<style>
-    * {
-        box-sizing: border-box;
-    }
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    .cols-2 {
-        grid-template-columns: 1fr 1fr;
-    }
+        .cols-2 {
+            grid-template-columns: 1fr 1fr;
+        }
 
-    html,
-    body {
-        height: 100%;
-    }
+        html,
+        body {
+            height: 100%;
+        }
 
-    body {
-        margin: 10px 50px 10px 50px;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-gap: 30px;
-        font-family: "Raleway", sans-serif;
-        background-color: #9ee2c4;
-    }
+        body {
+            margin: 10px 50px 10px 50px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-gap: 30px;
+            font-family: "Raleway", sans-serif;
+            background-color: #9ee2c4;
+        }
 
-    h3 {
-        font-size: 0.7em;
-        letter-spacing: 1.2px;
-        color: #a6a6a6;
-    }
+        h3 {
+            font-size: 0.7em;
+            letter-spacing: 1.2px;
+            color: #a6a6a6;
+        }
 
-    img {
-        max-width: 100%;
-        filter: drop-shadow(1px 1px 3px #a6a6a6);
-    }
+        img {
+            max-width: 100%;
+            filter: drop-shadow(1px 1px 3px #a6a6a6);
+        }
 
-    /* ----- Product Section ----- */
-    .product {
-        display: grid;
-        grid-template-columns: 0.9fr 1fr;
-        margin: auto;
-        padding: 2.5em 0;
-        min-width: 500px;
-        min-height: 500px;
-        background-color: white;
-        border-radius: 5px;
-    }
+        /* ----- Product Section ----- */
+        .product {
+            display: grid;
+            grid-template-columns: 0.9fr 1fr;
+            margin: auto;
+            padding: 2.5em 0;
+            min-width: 500px;
+            min-height: 500px;
+            background-color: white;
+            border-radius: 5px;
+        }
 
-    .product__photo {
-        position: relative;
+        .product__photo {
+            position: relative;
 
-    }
+        }
 
-    .photo-main {
-        position: absolute;
-        left: -3em;
-        top: 30px;
-        width: 300px;
-        /* height: 300px; */
-        border-radius: 50%;
-        box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-    }
+        .photo-main {
+            position: absolute;
+            left: -3em;
+            top: 30px;
+            width: 300px;
+            /* height: 300px; */
+            border-radius: 50%;
+            box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+        }
 
-    .product__info {
-        padding: 0.8em 0;
-    }
+        .product__info {
+            padding: 0.8em 0;
+        }
 
-    .title h1 {
-        margin-bottom: 1em;
-        color: #4c4c4c;
-        font-size: 1.5em;
-        font-weight: 900;
-    }
+        .title h1 {
+            margin-bottom: 1em;
+            color: #4c4c4c;
+            font-size: 1.5em;
+            font-weight: 900;
+        }
 
-    .price {
-        margin: 1.5em 0;
-        color: #ff3f40;
-        font-size: 1.2em;
-    }
+        .price {
+            margin: 1.5em 0;
+            color: #ff3f40;
+            font-size: 1.2em;
+        }
 
-    .price span {
-        padding-left: 0.15em;
-        font-size: 1.5em;
-    }
+        .price span {
+            padding-left: 0.15em;
+            font-size: 1.5em;
+        }
 
 
 
-    .buy--btn {
-        margin: 2em 0;
-        padding: 1.5em 3.1em;
-        border: none;
-        border-radius: 7px;
-        font-size: 0.8em;
-        font-weight: 700;
-        letter-spacing: 1.3px;
-        color: #fff;
-        background-color: #ff3f40;
-        box-shadow: 2px 2px 25px -7px #4c4c4c;
-        cursor: pointer;
-    }
+        .buy--btn {
+            margin: 2em 0;
+            padding: 1.5em 3.1em;
+            border: none;
+            border-radius: 7px;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 1.3px;
+            color: #fff;
+            background-color: #ff3f40;
+            box-shadow: 2px 2px 25px -7px #4c4c4c;
+            cursor: pointer;
+        }
 
-    .time {
-        font-size: 0.8em;
-        color: #807e7e;
-    }
+        .time {
+            font-size: 0.8em;
+            color: #807e7e;
+        }
 
-    .user {
-        display: flex;
-        align-items: center;
-        grid-gap: 8px;
-        font-weight: 600;
-    }
+        .user {
+            display: flex;
+            align-items: center;
+            grid-gap: 8px;
+            font-weight: 600;
+        }
 
-    .avt {
-        width: 30px;
-        height: 30px;
-        border-radius: 50px;
-    }
-</style>
+        .avt {
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
 
 <body>
     <div class="product">
@@ -153,6 +156,10 @@
                     </ul>
                 </div>
                 <button class="buy--btn">ADD TO CART</button>
+
+                <div class="pt-5">
+                    <h6 class="mb-0"><a href="index.php?act=food" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                </div>
             </div>
         <?php } ?>
     </div>

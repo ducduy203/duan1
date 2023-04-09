@@ -32,8 +32,7 @@
                     <p class="food-price"><?= $price ?> đ</p>
                     <p class="food-detail"><?= $description ?></p>
                     <br>
-                    <a href="index.php?act=order&id=<?php echo $id; ?>" class="btn btn-danger">Order Now</a> &ensp;
-                    <button type="submit" name="addtocart" class="btn btn-danger">Add</button>
+                    <button type="submit" name="addtocart" class="btn btn-danger">Add to cart</button>
 
                 </div>
 

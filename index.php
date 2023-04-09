@@ -22,7 +22,15 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
 
         case 'food':
             include 'views/header.php';
-            $listfood = loadall_food_home();
+            if (isset($_POST['listok']) && ($_POST['listok'])) {
+                $keyword = $_POST['keyword'];
+                $category_id = $_POST['category_id'];
+            } else {
+                $keyword = '';
+                $category_id = 0;
+            }
+            $listcategory = loadall_category();
+            $listfood = loadall_food_home($keyword, $category_id);
             include "views/foods.php";
             include 'views/footer.php';
             break;
@@ -141,8 +149,16 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     }
 } else {
     include 'views/header.php';
+    if (isset($_POST['listok']) && ($_POST['listok'])) {
+        $keyword = $_POST['keyword'];
+        $category_id = $_POST['category_id'];
+    } else {
+        $keyword = '';
+        $category_id = 0;
+    }
     $listcategory = loadall_category();
-    $listfood = loadall_food_home();
+    $listcategory = loadall_category();
+    $listfood = loadall_food_home($keyword, $category_id);
     include 'views/home.php';
     include 'views/footer.php';
 }

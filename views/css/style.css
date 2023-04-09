@@ -87,7 +87,7 @@ h3 {
     position: relative;
 }
 
-.float-text { 
+.float-text {
     position: absolute;
     bottom: 50px;
     left: 40%;
@@ -228,6 +228,3 @@ fieldset {
     margin-bottom: 1%;
     font-weight: bold;
 }
-
-
-

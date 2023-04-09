@@ -96,9 +96,19 @@
                             <a class="nav-link fw-bold fs-4" href="index.php?act=contact">Contact</a>
                         </li>
                     </ul>
-                    <form class="d-flex ms-5" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form action="index.php?act=food" class="d-flex ms-1" role="search" method="post">
+                        <input class="form-control me-1" name="keyword" type="search" placeholder="Search" aria-label="Search" required>
+
+                        <select name="category_id" style="border-radius: 10px; font-size: 10px; width: 50px">
+                            <option value="0" selected>Tất cả</option>
+                            <?php
+                            foreach ($listcategory as $category) {
+                                extract($category);
+                                echo '<option value="' . $category_id . '">' . $name . '</option>';
+                            }
+                            ?>
+                        </select>
+                        <input class="btn btn-outline-success ms-1" type="submit" name="listok" value="Search">
                     </form>
                 </div>
         </div>
