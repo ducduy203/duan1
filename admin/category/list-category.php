@@ -3,14 +3,14 @@
         <h1>List Category</h1>
         <a class="btn btn-primary mb-4" href="index.php?act=addcategory">Add Category</a>
 
-        <table class="table">
+        <table class="table mt-4">
             <thead>
                 <tr>
                     <th class="table-danger" scope="col"></th>
                     <th class="table-danger" scope="col">Category Code</th>
                     <th class="table-danger" scope="col">Category Name</th>
                     <th class="table-danger" scope="col">Category Image</th>
-                    <th class="table-danger" scope="col"></th>
+                    <th class="table-danger" scope="col">Action</th>
                 </tr>
             </thead>
             <?php
@@ -31,7 +31,7 @@
                                 <td>' . $hinh . '</td>
                                 
                                 <td>
-                                <div class="mt-3">
+                                <div class="mt-4">
                                 <a href="' . $updatecategory . '"><input class="btn btn-danger" type="button" value="Category Update"></a>
                                 <a href="' . $deletecategory . '"><input class="btn btn-danger" onclick="return confirm(`Are you sure?`);" type="button" value="Delete">
                                 </a>

@@ -15,7 +15,9 @@
                 <li><a href="index.php?act=listuser">User</a></li>
                 <li><a href="index.php?act=addcategory">Category</a></li>
                 <li><a href="index.php?act=addfood">Food</a></li>
+                <li><a href="index.php?act=listcomment">Comment</a></li>
                 <li><a href="manage-order.php">Order</a></li>
+                <li><a href="index.php?act=satistical">Satistical</a></li>
                 <a class="btn btn-primary" style="float: right" href="../index.php">Back</a>
             </ul>
         </div>

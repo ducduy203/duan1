@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Mở kết nối đến CSDL sử dụng PDO
  */
@@ -25,6 +26,21 @@ function pdo_execute($sql)
         $connect = pdo_get_connection();
         $stmt = $connect->prepare($sql);
         $stmt->execute($sql_args);
+    } catch (PDOException $e) {
+        throw $e;
+    } finally {
+        unset($connect);
+    }
+}
+
+function pdo_execute_return_lastInsertID($sql)
+{
+    $sql_args = array_slice(func_get_args(), 1);
+    try {
+        $connect = pdo_get_connection();
+        $stmt = $connect->prepare($sql);
+        $stmt->execute($sql_args);
+        return $connect->lastInsertID();
     } catch (PDOException $e) {
         throw $e;
     } finally {

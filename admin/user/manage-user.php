@@ -19,12 +19,12 @@
                     extract($user);
                     $deleteuser = "index.php?act=deleteuser&id=" . $id;
                     echo '<tr>
-                        <td><input type="checkbox" name="" id=""></td>
-                        <td>' . $id . '</td>
-                        <td>' . $email . '</td>
-                        <td>' . $username . '</td>
-                        <td>' . $address . '</td>
-                        <td>' . $tel . '</td>
+                        <td><input class="mt-4" type="checkbox" name="" id=""></td>
+                        <td><div class="mt-4">' . $id . '</div></td>
+                        <td><div class="mt-4">' . $email . '</div></td>
+                        <td><div class="mt-4">' . $username . '</div></td>
+                        <td><div class="mt-4">' . $address . '</div></td>
+                        <td><div class="mt-4">' . $tel . '</div></td>
                         <td>
                             <a href="' . $deleteuser . '">
                                 <input class="btn btn-danger" onclick="return confirm(`Are you sure?`);" type="button" value="Delete">

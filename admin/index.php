@@ -5,6 +5,9 @@ include '../model/PDO.php';
 include '../model/user.php';
 include '../model/category.php';
 include '../model/food.php';
+include '../model/comment.php';
+include '../model/statistical.php';
+
 function test_input($data)
 {
     $data = trim($data);
@@ -178,7 +181,28 @@ if (isset($_GET['act'])) {
             include "food/manage-food.php";
             break;
 
+        case 'listcomment':
+            $listcomment = loadall_comment();
+            include "comment/list-comment.php";
+            break;
 
+        case 'deletecomment':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_comment($_GET['id']);
+            }
+            $listcomment = loadall_comment();
+            include "comment/list-comment.php";
+            break;
+
+        case 'satistical':
+            $listsatistical = loadall_satistical();
+            include "satistical/list.php";
+            break;
+
+        case 'chart':
+            $listsatistical = loadall_satistical();
+            include "satistical/chart.php";
+            break;
         default:
             break;
     }

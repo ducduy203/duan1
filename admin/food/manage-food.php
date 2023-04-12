@@ -3,7 +3,7 @@
         <h1>Manage Food</h1>
         <a class="btn btn-primary mb-4" href="index.php?act=addfood">Add Food</a>
 
-        <table class="table">
+        <table class="table mt-4">
             <thead>
                 <tr>
                     <th class="table-danger" scope="col"></th>
@@ -30,12 +30,12 @@
                     echo '<tr>
                         <td><input type="checkbox" name="" id="" class="mt-4"></td>
                         <td><div class="mt-4">' . $id . '</div></td>
-                        <td><div class="mt-3">' . $name . '</div></td>
-                        <td><div class="mt-3">' . $description . '</div></td>
+                        <td><div class="mt-4">' . $name . '</div></td>
+                        <td><div class="mt-4">' . $description . '</div></td>
                         <td><div class="mt-4">' . $price . '</div></td>
                         <td>' . $hinh . '</td>
                         <td>
-                            <div class="mt-3" style="display: grid; gap: 4px; grid-template-columns: 1fr 1fr">
+                            <div class="mt-4" style="display: grid; gap: 4px; grid-template-columns: 1fr 1fr">
                             <a href="' . $updatefood . '">
                                 <input class="btn btn-danger" type="button" value="Update">
                             </a>

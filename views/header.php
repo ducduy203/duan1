@@ -27,6 +27,9 @@
                     shopping_cart
                 </span>
             </a>
+            <a href="index.php?act=orderhistory" class="">
+                Lịch sử
+            </a>
             &ensp; &ensp;
             <?php
             if (isset($_SESSION['user'])) {
