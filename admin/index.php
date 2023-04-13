@@ -7,6 +7,7 @@ include '../model/category.php';
 include '../model/food.php';
 include '../model/comment.php';
 include '../model/statistical.php';
+include '../model/cart.php';
 
 function test_input($data)
 {
@@ -192,6 +193,16 @@ if (isset($_GET['act'])) {
             }
             $listcomment = loadall_comment();
             include "comment/list-comment.php";
+            break;
+
+        case 'listbill':
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $listbill = loadall_bill($kyw, 0);
+            include "bill/list-bill.php";
             break;
 
         case 'satistical':

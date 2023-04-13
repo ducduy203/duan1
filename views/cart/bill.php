@@ -96,16 +96,13 @@
                             <div class="" style="margin-top: 20px;">
                                 <h4>Phương Thức Thanh Toán</h4>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        Thanh Toán Khi Nhận Hàng
-                                    </label>
+                                    <input class="form-check-input" type="radio" name="pttt" value="1" checked>Thanh Toán Khi Nhận Hàng
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                                    <label class="form-check-label" for="exampleRadios3">
-                                        Thanh Toán Online
-                                    </label>
+                                    <input class="form-check-input" type="radio" name="pttt" value="2">Thanh Toán Online
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pttt" value="3">Chuyển khoản
                                 </div>
                             </div>
                             <div class="pt-5">

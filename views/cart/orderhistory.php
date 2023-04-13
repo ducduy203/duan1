@@ -61,10 +61,12 @@
                     if (is_array($listbill) && count($listbill) > 0) {
                         foreach ($listbill as $bill) {
                             extract($bill);
+                            $stt_order = get_stt_order($bill['bill_stt']);
+                            $countfood = loadall_cart_count($bill['id']);
                     ?>
 
                             <div class="modal-body">
-                                <div class="card mb-2" style="background-color: #EEEEEE;">
+                                <div class="card mb-5" style="background-color: #EEEEEE;">
                                     <div class="card-body mx-4">
                                         <div class="container">
                                             <i><?= $orderdate ?></i>
@@ -76,9 +78,23 @@
                                                     <li class="text-black mt-1">Email: <i><?= $bill['bill_email'] ?></i></li>
                                                     <li class="text-black mt-1">Tel: <i><?= $bill['bill_tel'] ?></i></li>
                                                     <li class="text-black mt-1">Address: <i><?= $bill['bill_address'] ?></i></li>
-                                                    <li class="text-black mt-1">Time: <i><?= $bill['orderdate'] ?></i></li>
                                                 </ul>
-                                                <hr>
+                                                <table class="table">
+                                                    <thead class="table-primary">
+                                                        <tr>
+                                                            <th>Số lượng đơn mua</th>
+                                                            <th>Ngày đặt đơn</th>
+                                                            <th>Trạng thái đơn hàng</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><?= $countfood ?></td>
+                                                            <td><?= $orderdate ?></td>
+                                                            <td><b><i><?= $stt_order ?></i></b></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                             <?php
                                             // billct($billct);

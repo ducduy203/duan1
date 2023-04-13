@@ -173,14 +173,17 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             if (isset($_POST['order']) && ($_POST['order'] > 0)) {
                 if (isset($_SESSION['user'])) {
                     $id_user = $_SESSION['user']['id'];
+                } else {
+                    $id = 0;
                 }
                 $username = $_POST['username'];
                 $email = $_POST['email'];
                 $tel = $_POST['tel'];
+                $pttt = $_POST['pttt'];
                 $address = $_POST['address'];
                 $orderdate = date('Y/m/d');
                 $totalbill = totalbill();
-                $idbill = insert_bill($id_user, $username, $email, $tel, $address, $orderdate, $totalbill);
+                $idbill = insert_bill($id_user, $username, $email, $tel, $address, $pttt, $orderdate, $totalbill);
 
                 foreach ($_SESSION['mycart'] as $cart) {
                     insert_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
@@ -201,6 +204,7 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             } else {
                 $listbill = null;
             }
+            // $billct = loadall_cart($idbill);
             include "views/cart/orderhistory.php";
             include 'views/footer.php';
             break;

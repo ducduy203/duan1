@@ -49,9 +49,9 @@ function totalbill()
     return $total;
 }
 
-function insert_bill($id_user, $name, $email, $tel, $address, $orderdate, $totalbill)
+function insert_bill($id_user, $name, $email, $tel, $address, $pttt, $orderdate, $totalbill)
 {
-    $sql = "insert into tbl_bill (id_user, bill_name, bill_email, bill_tel, bill_address, orderdate, totalbill) values('$id_user', '$name', '$email', '$tel', '$address', '$orderdate', '$totalbill')";
+    $sql = "insert into tbl_bill (id_user, bill_name, bill_email, bill_tel, bill_address, bill_pttt, orderdate, totalbill) values('$id_user', '$name', '$email', '$tel', '$address', '$pttt', '$orderdate', '$totalbill')";
     return  pdo_execute_return_lastInsertID($sql);
 }
 
@@ -74,11 +74,43 @@ function loadall_cart($idbill)
     $cart = pdo_query($sql);
     return $cart;
 }
-function loadall_bill($id_user)
+function loadall_cart_count($idbill)
 {
-    $sql = "select * from tbl_bill where id_user=" . $id_user;
+    $sql = "select * from tbl_cart where id_bill=" . $idbill;
+    $cart = pdo_query($sql);
+    return sizeof($cart);
+}
+
+function loadall_bill($kyw = "", $id_user = 0)
+{
+    $sql = "select * from tbl_bill where 1";
+    if ($id_user > 0) $sql .= " and id_user=" . $id_user;
+    if ($kyw != "") $sql .= " and id like '%" . $kyw . "%'";
+    $sql .= " order by id desc";
     $listbill = pdo_query($sql);
     return $listbill;
+}
+
+function get_stt_order($n)
+{
+    switch ($n) {
+        case '0':
+            $stt = 'Đơn hàng mới';
+            break;
+        case '1':
+            $stt = 'Đang xử lý';
+            break;
+        case '2':
+            $stt = 'Đang giao hàng';
+            break;
+        case '3':
+            $stt = 'Giao thành công';
+            break;
+        default:
+            $stt = 'Đơn hàng mới';
+            break;
+    }
+    return $stt;
 }
 
 function billct($listbill)

@@ -66,10 +66,10 @@
                         <div class="card">
                             <div class="card-body mx-4">
                                 <div class="container">
-                                    <p style="text-align: center;"><i style="font-size: 30px; box-shadow: 2px 2px 3px; padding: 5px 20px">Thank For Your Purchase</i></p>
-                                    <p class="my-2 mt-5 fw-bold" style="font-size: 20px;">Order Information: NO. <?= $bill['id'] ?></p>
+                                    <p style="text-align: center;"><i style="font-size: 30px; box-shadow: 2px 2px 3px; padding: 5px 20px">Cảm ơn bạn đã đặt hàng</i></p>
+                                    <p class="my-2 mt-5 fw-bold" style="font-size: 20px;"><b>Order Information: NO.<?= $bill['id'] ?></b> <i class="ms-5">Payment Methods: <?= $bill['bill_pttt'] ?></i></p>
 
-                                    <div class="row">
+                                    <div class="col d-flex">
                                         <ul class="list-unstyled">
                                             <li class="text-black">Client Name: <i><?= $bill['bill_name'] ?></i></li>
                                             <li class="text-black mt-1">Email: <i><?= $bill['bill_email'] ?></i></li>
