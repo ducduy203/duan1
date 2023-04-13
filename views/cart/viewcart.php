@@ -65,10 +65,7 @@
                     <?php
                     $total = 0;
                     $i = 0;
-                    // var_dump($_SESSION['mycart']);
                     foreach ($_SESSION['mycart'] as $cart) {
-
-                      // Kiểm tra biến $image tồn tại
                       if (isset($cart[2])) {
                         $hinhpath = "";
                         $hinh = $hinhpath . $cart[2];
@@ -187,8 +184,6 @@
 
     <div class="container">
       <h2 class="text-center">See More Food</h2>
-
-
       <?php
       foreach ($listfood as $food) {
         extract($food);
@@ -199,7 +194,7 @@
           $hinh = "no photo";
         }
       ?>
-        <form action="index.php?act=addtocart&id=<?php echo $id; ?>" method="post" class="food-menu-box" style="margin: 30px 0 0 50px">
+        <form action="index.php?act=addtocart" method="post" class="food-menu-box" style="margin: 30px 0 0 50px">
           <a href="index.php?act=food-detail&id=<?php echo $id; ?>" class="food-menu-img">
             <img src="<?= $hinh ?>" width="120px" height="120px" class="rounded-4">
           </a>

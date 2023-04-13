@@ -57,43 +57,50 @@
                     </div>
 
                     <?php
-                    foreach ($listbill as $bill) {
-                        extract($bill);
+
+                    if (is_array($listbill) && count($listbill) > 0) {
+                        foreach ($listbill as $bill) {
+                            extract($bill);
                     ?>
 
-                        <div class="modal-body">
-                            <div class="card mb-2" style="background-color: #EEEEEE;">
-                                <div class="card-body mx-4">
-                                    <div class="container">
-                                        <i><?= $bill['orderdate'] ?></i>
-                                        <p class="my-2 mt-4 fw-bold" style="font-size: 20px;">Order Information: NO. <?= $id ?></p>
+                            <div class="modal-body">
+                                <div class="card mb-2" style="background-color: #EEEEEE;">
+                                    <div class="card-body mx-4">
+                                        <div class="container">
+                                            <i><?= $orderdate ?></i>
+                                            <p class="my-2 mt-4 fw-bold" style="font-size: 20px;">Order Information: NO.<?= $id ?></p>
 
-                                        <div class="row">
-                                            <ul class="list-unstyled">
-                                                <li class="text-black">Client Name: <i><?= $bill['bill_name'] ?></i></li>
-                                                <li class="text-black mt-1">Email: <i><?= $bill['bill_email'] ?></i></li>
-                                                <li class="text-black mt-1">Tel: <i><?= $bill['bill_tel'] ?></i></li>
-                                                <li class="text-black mt-1">Address: <i><?= $bill['bill_address'] ?></i></li>
-                                                <li class="text-black mt-1">Time: <i><?= $bill['orderdate'] ?></i></li>
-                                            </ul>
-                                            <hr>
-                                        </div>
-                                        <?php
-                                        // billct($billct);
-                                        ?>
-
-                                        <div class="row text-black">
-
-                                            <div class="col-xl-12">
-                                                <p class="float-end fw-bold" style="font-size: 20px">Total bill: <?= $bill['totalbill'] ?> đ</p>
+                                            <div class="row">
+                                                <ul class="list-unstyled">
+                                                    <li class="text-black">Client Name: <i><?= $bill['bill_name'] ?></i></li>
+                                                    <li class="text-black mt-1">Email: <i><?= $bill['bill_email'] ?></i></li>
+                                                    <li class="text-black mt-1">Tel: <i><?= $bill['bill_tel'] ?></i></li>
+                                                    <li class="text-black mt-1">Address: <i><?= $bill['bill_address'] ?></i></li>
+                                                    <li class="text-black mt-1">Time: <i><?= $bill['orderdate'] ?></i></li>
+                                                </ul>
+                                                <hr>
                                             </div>
-                                        </div>
+                                            <?php
+                                            // billct($billct);
+                                            ?>
 
+                                            <div class="row text-black">
+
+                                                <div class="col-xl-12">
+                                                    <p class="float-end fw-bold" style="font-size: 20px">Total bill: <?= $bill['totalbill'] ?> đ</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                    <?php
+                        }
+                    } else {
+                        echo '<p class="mt-4" style="text-align: center; margin-bottom: 200px">Bạn không có lịch sử đơn hàng</p>';
+                    }
+                    ?>
                 </div>
             </div>
 

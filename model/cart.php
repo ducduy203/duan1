@@ -49,9 +49,9 @@ function totalbill()
     return $total;
 }
 
-function insert_bill($name, $email, $tel, $address, $orderdate, $totalbill)
+function insert_bill($id_user, $name, $email, $tel, $address, $orderdate, $totalbill)
 {
-    $sql = "insert into tbl_bill (bill_name, bill_email, bill_tel, bill_address, orderdate, totalbill) values('$name', '$email', '$tel', '$address', '$orderdate', '$totalbill')";
+    $sql = "insert into tbl_bill (id_user, bill_name, bill_email, bill_tel, bill_address, orderdate, totalbill) values('$id_user', '$name', '$email', '$tel', '$address', '$orderdate', '$totalbill')";
     return  pdo_execute_return_lastInsertID($sql);
 }
 
@@ -74,9 +74,9 @@ function loadall_cart($idbill)
     $cart = pdo_query($sql);
     return $cart;
 }
-function loadall_bill()
+function loadall_bill($id_user)
 {
-    $sql = "select * from tbl_bill order by id desc";
+    $sql = "select * from tbl_bill where id_user=" . $id_user;
     $listbill = pdo_query($sql);
     return $listbill;
 }

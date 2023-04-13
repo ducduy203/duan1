@@ -132,6 +132,13 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
 
         case 'addtocart':
             include 'views/header.php';
+            if (isset($_POST['listok']) && ($_POST['listok'])) {
+                $keyword = $_POST['keyword'];
+                $category_id = $_POST['category_id'];
+            } else {
+                $keyword = '';
+                $category_id = 0;
+            }
             if (isset($_POST['addtocart'])) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
@@ -142,7 +149,7 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
                 $foodadd = [$id, $name, $hinh, $price, $quantity, $money];
                 array_push($_SESSION['mycart'], $foodadd);
             }
-
+            $listfood = loadall_food_home($keyword, $category_id);
             include "views/cart/viewcart.php";
             break;
 
@@ -164,14 +171,16 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             include 'views/header.php';
 
             if (isset($_POST['order']) && ($_POST['order'] > 0)) {
-                // if (isset($_SESSION['user']) $id_user = $_SESSION['user']['id'];
+                if (isset($_SESSION['user'])) {
+                    $id_user = $_SESSION['user']['id'];
+                }
                 $username = $_POST['username'];
                 $email = $_POST['email'];
                 $tel = $_POST['tel'];
                 $address = $_POST['address'];
                 $orderdate = date('Y/m/d');
                 $totalbill = totalbill();
-                $idbill = insert_bill($username, $email, $tel, $address, $orderdate, $totalbill);
+                $idbill = insert_bill($id_user, $username, $email, $tel, $address, $orderdate, $totalbill);
 
                 foreach ($_SESSION['mycart'] as $cart) {
                     insert_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
@@ -185,8 +194,15 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
 
         case 'orderhistory':
             include 'views/header.php';
-            $listbill = loadall_bill();
+            // $listbill = loadall_bill($_SESSION['user']['id']);
+            if (isset($_SESSION['user']) && $_SESSION['user']) {
+                $user = $_SESSION['user'];
+                $listbill = loadall_bill($user['id']);
+            } else {
+                $listbill = null;
+            }
             include "views/cart/orderhistory.php";
+            include 'views/footer.php';
             break;
 
         default:

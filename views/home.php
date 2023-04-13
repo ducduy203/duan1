@@ -67,7 +67,7 @@
                 $hinh = "no photo";
             }
         ?>
-            <form action="index.php?act=addtocart&id=<?php echo $id; ?>" method="post" class="food-menu-box" style="margin: 30px 0 0 50px">
+            <form action="index.php?act=addtocart" method="post" class="food-menu-box" style="margin: 30px 0 0 50px">
                 <a href="index.php?act=food-detail&id=<?php echo $id; ?>" class="food-menu-img">
                     <img src="<?= $hinh ?>" width="120px" height="120px" class="rounded-4">
                 </a>
