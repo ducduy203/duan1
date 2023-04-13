@@ -214,6 +214,10 @@ if (isset($_GET['act'])) {
             $listsatistical = loadall_satistical();
             include "satistical/chart.php";
             break;
+
+        case 'support':
+            include "support.php";
+            break;
         default:
             break;
     }

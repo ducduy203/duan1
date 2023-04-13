@@ -18,6 +18,7 @@
                 <li><a href="index.php?act=listcomment">Comment</a></li>
                 <li><a href="index.php?act=listbill">Bill</a></li>
                 <li><a href="index.php?act=satistical">Satistical</a></li>
+                <li><a href="index.php?act=support">Support</a></li>
                 <a class="btn btn-primary" style="float: right" href="../index.php">Back</a>
             </ul>
         </div>
