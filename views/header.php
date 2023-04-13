@@ -110,7 +110,7 @@
                     }
                     ?>
                     <form action="index.php?act=food" class="d-flex ms-1" role="search" method="post">
-                        <input class="form-control me-1" name="keyword" type="search" placeholder="Search" aria-label="Search" required>
+                        <input class="form-control me-1" name="keyword" type="search" placeholder="Search" aria-label="Search" required value="<?php echo isset($_POST['keyword']) ? $_POST['keyword'] : '' ?>">
                         <input type="hidden" name="category_id" value="<?php echo $category_id ?>">
                         <input class="btn btn-outline-success ms-1" type="submit" name="listok" value="Search">
                     </form>
