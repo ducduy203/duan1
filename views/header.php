@@ -99,18 +99,19 @@
                             <a class="nav-link fw-bold fs-4" href="index.php?act=contact">Contact</a>
                         </li>
                     </ul>
+
+                    <?php
+                    $category_id = 0; // Thiết lập giá trị mặc định cho category_id là 0
+
+                    if (isset($_POST['listok'])) {
+                        $keyword = $_POST['keyword'];
+                        $category_id = $_POST['category_id'];
+                        // Thêm các xử lý tìm kiếm tại đây
+                    }
+                    ?>
                     <form action="index.php?act=food" class="d-flex ms-1" role="search" method="post">
                         <input class="form-control me-1" name="keyword" type="search" placeholder="Search" aria-label="Search" required>
-
-                        <select name="category_id" style="border-radius: 10px; font-size: 10px; width: 50px">
-                            <option value="0" selected>Tất cả</option>
-                            <?php
-                            foreach ($listcategory as $category) {
-                                extract($category);
-                                echo '<option value="' . $category_id . '">' . $name . '</option>';
-                            }
-                            ?>
-                        </select>
+                        <input type="hidden" name="category_id" value="<?php echo $category_id ?>">
                         <input class="btn btn-outline-success ms-1" type="submit" name="listok" value="Search">
                     </form>
                 </div>
