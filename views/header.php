@@ -81,7 +81,7 @@
     </div>
     <section class="navbar">
         <div class="container" style="display: grid; grid-template-columns: 1fr 2fr">
-            <img src="views/images/logo.png" alt="Restaurant Logo" class="">
+            <a href="index.php"><img src="views/images/logo.png" alt="Restaurant Logo" class=""></a>
 
             <nav class="navbar navbar-expand-xxl navbar-light">
                 <div class="collapse navbar-collapse " id="navbarNavDropdown">

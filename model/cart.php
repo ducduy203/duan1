@@ -3,7 +3,6 @@
 function viewcart()
 {
     $total = 0;
-    $i = 0;
     foreach ($_SESSION['mycart'] as $cart) {
         if (isset($cart[2])) {
             $hinhpath = "";
@@ -14,31 +13,30 @@ function viewcart()
 
         $money = $cart[4] * $cart[3];
         $total += $money;
-    }
-    echo '
-        <div class="row mb-4 d-flex justify-content-between align-items-center">
-            <div class="col-md-2 col-lg-1 col-xl-2">
-                <img src=' . $hinh . ' width="100" height="100" alt="">
-            </div>
-            <div class="col-md-3 col-lg-1 col-xl-3">
-                <h6 class="text-muted">' . $cart[1] . '</h6>
-            </div>
-            <div class="d-flex justify-content-center align-items-center col-md-3 col-lg-3 col-xl-3">
-                <button onclick="minus()" name="minus" class="border border-0"><i class="fa-solid fa-minus"></i></button>
-                <input type="text" class="text-muted text-center border-0" style="width:25%" id="amount" name="amount" value=' . $cart[4] . '>
+        echo '
+      <hr class="my-4">
+      <div class="row mb-4 d-flex justify-content-between align-items-center">
+        <div class="col-md-2 col-lg-2 col-xl-2">
+          <img src=' . $hinh . ' width="100" height="100" alt="">
+        </div>
+        <div class="col-md-3 col-lg-3 col-xl-3">
+          <h6 class="text-muted">' . $cart[1] . '</h6>
+        </div>
+        <div class="d-flex justify-content-center align-items-center col-md-3 col-lg-3 col-xl-3">
+          <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+          <input type="text" class="form-control quantity-input" value=' . $cart[4] . '>
+          <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+          <!-- <button onclick="minus()" name="minus" class="border border-0"><i class="fa-solid fa-minus"></i></button>
+          <input type="text" class="text-muted text-center border-0" style="width:25%" id="amount" name="amount" value=' . $cart[4] . '>
 
-                <button onclick="plus()" name="plus" class="border border-0"><i class="fa-solid fa-plus"></i></button>
-            </div>
-            <div class="col-md-3 col-lg-1 col-xl-2 offset-lg-1">
-                <h6 class="mb-0">' . $cart[5] . '</h6>
-            </div>
+          <button onclick="plus()" name="plus" class="border border-0"><i class="fa-solid fa-plus"></i></button> -->
         </div>
-        <div class="row">
-            <p class="col fw-bold">Tổng đơn hàng: </p>
-            <p class="col fw-bold" style="padding-left: 26em">' . $total . '</p>
+
+        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+          <h6 class="mb-0">' . $cart[5] . '</h6>
         </div>
-    ';
-    $i += 1;
+      </div> ';
+    }
 }
 
 function totalbill()
@@ -70,11 +68,11 @@ function loadone_bill($id)
     return $bill;
 }
 
-function loadone_cart($idbill)
+function loadall_cart($idbill)
 {
     $sql = "select * from tbl_cart where id_bill=" . $idbill;
-    $bill = pdo_query_one($sql);
-    return $bill;
+    $cart = pdo_query($sql);
+    return $cart;
 }
 function loadall_bill()
 {
@@ -86,19 +84,15 @@ function loadall_bill()
 function billct($listbill)
 {
     $total = 0;
-    $i = 0;
     foreach ($listbill as $cart) {
         if (isset($cart['image'])) {
             $hinhpath = "";
-            $hinh = $hinhpath . $cart[2];
+            $hinh = $hinhpath . $cart['image'];
         } else {
             $hinh = "no photo";
         }
-
-        // $money = $cart['quantity'] * $cart['price'];
         $total += $cart['money'];
-    }
-    echo '
+        echo '
         <div class="row mb-4 d-flex justify-content-between align-items-center">
             <div class="col-md-2 col-lg-1 col-xl-2">
                 <img src=' . $hinh . ' width="100" height="100" alt="">
@@ -107,19 +101,12 @@ function billct($listbill)
                 <h6 class="text-muted">' . $cart['name'] . '</h6>
             </div>
             <div class="d-flex justify-content-center align-items-center col-md-3 col-lg-3 col-xl-3">
-                <button onclick="minus()" name="minus" class="border border-0"><i class="fa-solid fa-minus"></i></button>
-                <input type="text" class="text-muted text-center border-0" style="width:25%" id="amount" name="amount" value=' . $cart['quantity'] . '>
-
-                <button onclick="plus()" name="plus" class="border border-0"><i class="fa-solid fa-plus"></i></button>
+                <p class="text-muted text-center border-0" name="amount">' . $cart['quantity'] . '</p>
             </div>
             <div class="col-md-3 col-lg-1 col-xl-2 offset-lg-1">
                 <h6 class="mb-0">' . $cart['money'] . '</h6>
             </div>
         </div>
-        <div class="row">
-            <p class="col fw-bold">Tổng đơn hàng: </p>
-            <p class="col fw-bold" style="padding-left: 26em">' . $total . '</p>
-        </div>
     ';
-    $i += 1;
+    }
 }

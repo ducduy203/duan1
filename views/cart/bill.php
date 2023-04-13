@@ -112,7 +112,9 @@
                                 <h6 class="mb-0"><a href="index.php?act=viewcart" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Back to cart</a></h6>
                             </div>
                             <div class="modal-footer">
-                                <button onclick="return confirm('Are you sure you want to order?');"><input type="submit" name="order" value="Order" class="btn btn-primary"></button>
+                                <button onclick="return confirm('Are you sure you want to order?');" style="border: none">
+                                    <input type="submit" name="order" value="Order" class="btn btn-primary">
+                                </button>
                             </div>
                         </form>
 

@@ -48,8 +48,8 @@
 </style>
 
 <body>
-    <section class="" style="background-color: #d2c9ff; height: 800px">
-        <div class="container h-100" style="padding-top: 50px; width: 100%">
+    <section class="" style="background-color: #d2c9ff; height: 850px">
+        <div class="container h-100" style="padding-top: 50px; width: 60%">
 
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -79,18 +79,8 @@
                                         </ul>
                                         <hr>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-xl-10">
-                                            <p>Consulting</p>
-                                        </div>
-                                        <div class="col-xl-2">
-                                            <p class="float-end">$100.00
-                                            </p>
-                                        </div>
-                                        <hr>
-                                    </div>
                                     <?php
-                                    // billct($billct);
+                                    billct($billct);
                                     ?>
 
                                     <div class="row text-black">
@@ -100,7 +90,7 @@
                                         </div>
                                         <hr style="border: 2px solid black;">
                                     </div>
-                                    <div class="text-center" style="margin-top: 90px;">
+                                    <div class="text-center" style="margin-top: 10px;">
                                         <img src="views/images/logo.png" alt="" srcset="">
                                     </div>
 

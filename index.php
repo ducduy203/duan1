@@ -119,6 +119,14 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
 
         case 'viewcart':
             include 'views/header.php';
+            if (isset($_POST['listok']) && ($_POST['listok'])) {
+                $keyword = $_POST['keyword'];
+                $category_id = $_POST['category_id'];
+            } else {
+                $keyword = '';
+                $category_id = 0;
+            }
+            $listfood = loadall_food_home($keyword, $category_id);
             include "views/cart/viewcart.php";
             break;
 
@@ -156,6 +164,7 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             include 'views/header.php';
 
             if (isset($_POST['order']) && ($_POST['order'] > 0)) {
+                // if (isset($_SESSION['user']) $id_user = $_SESSION['user']['id'];
                 $username = $_POST['username'];
                 $email = $_POST['email'];
                 $tel = $_POST['tel'];
@@ -170,11 +179,12 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
                 $_SESSION['cart'] = [];
             }
             $bill = loadone_bill($idbill);
-            $billct = loadone_cart($idbill);
+            $billct = loadall_cart($idbill);
             include "views/cart/billconfirm.php";
             break;
 
         case 'orderhistory':
+            include 'views/header.php';
             $listbill = loadall_bill();
             include "views/cart/orderhistory.php";
             break;

@@ -48,7 +48,7 @@
 </style>
 
 <body>
-    <section class="" style="background-color: #d2c9ff; height: 800px">
+    <section class="">
         <div class="container h-100" style="padding-top: 50px; width: 100%">
 
             <div class="modal-dialog">
@@ -57,18 +57,16 @@
                     </div>
 
                     <?php
-                    // if (isset($bill) && (is_array($bill))) {
-                    //     extract($bill);
-                    // }
                     foreach ($listbill as $bill) {
                         extract($bill);
                     ?>
 
                         <div class="modal-body">
-                            <div class="card">
+                            <div class="card mb-2" style="background-color: #EEEEEE;">
                                 <div class="card-body mx-4">
                                     <div class="container">
-                                        <p class="my-2 mt-5 fw-bold" style="font-size: 20px;">Order Information: NO. <?= $id ?></p>
+                                        <i><?= $bill['orderdate'] ?></i>
+                                        <p class="my-2 mt-4 fw-bold" style="font-size: 20px;">Order Information: NO. <?= $id ?></p>
 
                                         <div class="row">
                                             <ul class="list-unstyled">
@@ -78,16 +76,6 @@
                                                 <li class="text-black mt-1">Address: <i><?= $bill['bill_address'] ?></i></li>
                                                 <li class="text-black mt-1">Time: <i><?= $bill['orderdate'] ?></i></li>
                                             </ul>
-                                            <hr>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xl-10">
-                                                <p>Consulting</p>
-                                            </div>
-                                            <div class="col-xl-2">
-                                                <p class="float-end">$100.00
-                                                </p>
-                                            </div>
                                             <hr>
                                         </div>
                                         <?php

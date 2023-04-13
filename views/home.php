@@ -1,12 +1,12 @@
 <div id="carouselExampleAutoplaying" class="container carousel slide px-3" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="3000">
+        <div class="carousel-item active" data-bs-interval="2000">
             <img src="views/images/banner1.jpg" class="d-block w-100" style="height: 400px" alt="">
         </div>
-        <div class="carousel-item" data-bs-interval="3000">
+        <div class="carousel-item" data-bs-interval="2000">
             <img src="views/images/banner2.jpg" class="d-block w-100" style="height: 400px" alt="">
         </div>
-        <div class="carousel-item" data-bs-interval="3000">
+        <div class="carousel-item" data-bs-interval="2000">
             <img src="views/images/banner3.jpg" class="d-block w-100" style="height: 400px" alt="">
         </div>
     </div>
