@@ -23,9 +23,7 @@ function viewcart()
           <h6 class="text-muted">' . $cart[1] . '</h6>
         </div>
         <div class="d-flex justify-content-center align-items-center col-md-3 col-lg-3 col-xl-3">
-          <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
           <input type="text" class="form-control quantity-input" value=' . $cart[4] . '>
-          <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
           <!-- <button onclick="minus()" name="minus" class="border border-0"><i class="fa-solid fa-minus"></i></button>
           <input type="text" class="text-muted text-center border-0" style="width:25%" id="amount" name="amount" value=' . $cart[4] . '>
 

@@ -27,8 +27,11 @@
                     shopping_cart
                 </span>
             </a>
+           
             <a href="index.php?act=orderhistory" class="">
-                Lịch sử
+            <span class="material-symbols-outlined text-light mt-2 ms-3">
+                history
+                </span>
             </a>
             &ensp; &ensp;
             <?php

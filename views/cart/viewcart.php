@@ -88,9 +88,9 @@
                           <h6 class="text-muted"><?= $cart[1] ?></h6>
                         </div>
                         <div class="d-flex justify-content-center align-items-center col-md-3 col-lg-3 col-xl-3">
-                          <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                          
                           <input type="text" class="form-control quantity-input" value="<?= $cart[4] ?>">
-                          <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                         
                           <!-- <button onclick="minus()" name="minus" class="border border-0"><i class="fa-solid fa-minus"></i></button>
                           <input type="text" class="text-muted text-center border-0" style="width:25%" id="amount" name="amount" value="<?= $cart[4] ?>">
 
@@ -140,21 +140,7 @@
                     <h3 class="fw-bold mb-5 mt-2 pt-1 text-danger">Summary</h3>
                     <hr class="my-4">
 
-                    <div class="d-flex justify-content-between mb-4">
-                      <h5 class="text-uppercase">Items</h5>
-                      <h5> </h5>
-                    </div>
-
-                    <h5 class="text-uppercase mb-3">Shipping</h5>
-
-                    <div class="mb-4 pb-2">
-                      <select class="select">
-                        <option value="1">Standard-Delivery- €5.00</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                      </select>
-                    </div>
+                   
 
                     <h5 class="text-uppercase mb-3">Give code</h5>
 
