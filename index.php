@@ -36,6 +36,7 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             break;
 
         case 'food-detail':
+            include 'views/header.php';
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
                 $onefood = loadone_food($id);
@@ -47,6 +48,7 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
                 include "views/home.php";
             }
             // include "views/food-detail.php";
+            include 'views/footer.php';
             break;
 
         case 'order':

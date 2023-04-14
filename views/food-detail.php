@@ -14,11 +14,11 @@
             height: 100%;
         }
 
-        body {
-            margin: 10px 50px 10px 50px;
+        .body {
+            padding: 0 150px 100px 100px;
             display: grid;
             grid-template-columns: 2fr 1fr;
-            grid-gap: 30px;
+            grid-gap: 10px;
             font-family: "Raleway", sans-serif;
             background-color: #9ee2c4;
         }
@@ -120,7 +120,7 @@
 </head>
 
 <body>
-    <div class="product">
+    <section class="body">
         <?php
         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
             $id = $_GET['id'];
@@ -136,67 +136,77 @@
                 $hinh = "no photo";
             }
         ?>
-            <div class="product__photo">
-                <div class="">
-                    <img class="photo-main" src="<?= $hinh ?>" alt="green apple slice" style="height: 250px;">
-                </div>
-            </div>
-            <div class="product__info">
-                <div class="title">
-                    <h1><?= $name ?></h1>
-                    <span>COD: <?= $id ?></span>
-                </div>
-                <div class="price">
-                    <span><?= $price ?></span> đ
-                </div>
-                <div class="description">
-                    <h3>INCLUDES</h3>
-                    <ul>
-                        <li style="width: 150px"><?= $description ?></li>
-                    </ul>
-                </div>
-                <button class="buy--btn">ADD TO CART</button>
+            <form action="index.php?act=addtocart" method="post" style="width: 600px; margin: 70px 0 0 100px">
+                <div class="product">
 
-                <div class="pt-5">
-                    <h6 class="mb-0"><a href="index.php?act=food" class="text-body" ><i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                    <div class="product__photo">
+                        <div class="">
+                            <img class="photo-main" src="<?= $hinh ?>" alt="green apple slice" style="height: 250px;">
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <input type="hidden" name="id" value="<?= $id ?>">
+                        <input type="hidden" name="name" value="<?= $name ?>">
+                        <input type="hidden" name="price" value="<?= $price ?>">
+                        <input type="hidden" name="description" value="<?= $description ?>">
+                        <input type="hidden" name="hinh" value="<?= $hinh ?>">
+                        <div class="title">
+                            <h1><?= $name ?></h1>
+                            <span>COD: <?= $id ?></span>
+                        </div>
+                        <div class="price">
+                            <span><?= $price ?></span> đ
+                        </div>
+                        <div class="description">
+                            <h3>INCLUDES</h3>
+                            <ul>
+                                <li style="width: 150px"><?= $description ?></li>
+                            </ul>
+                        </div>
+                        <a href="index.php?act=addtocart"><button type="submit" name="addtocart" class="buy--btn">ADD TO CART</button></a>
+
+                        <div class="pt-5">
+                            <h6 class="mb-0"><a href="index.php?act=food" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+            </form>
         <?php } ?>
-    </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#comment").load("views/comment.php", {
-                id_food: <?= $id ?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#comment").load("views/comment.php", {
+                    id_food: <?= $id ?>
+                });
             });
-        });
-    </script>
+        </script>
 
 
-    <div>
-        <h2 style="color: #4c4c4c; margin-top: 2em;">Comment</h2>
-        <?php
-        foreach ($listcomment as  $comment) {
-            extract($comment);
-        ?>
-            <div>
-                <div class="user">
-                    <img class="avt" src="views/images/avt.jpg" alt="">
-                    <p>User code: <?= $comment['id_user']; ?></p>
+        <div>
+            <h2 style="color: #4c4c4c; margin-top: 2em;">Comment</h2>
+            <?php
+            foreach ($listcomment as  $comment) {
+                extract($comment);
+            ?>
+                <div>
+                    <div class="user">
+                        <img class="avt" src="views/images/avt.jpg" alt="">
+                        <p>User code: <?= $comment['id_user']; ?></p>
+                    </div>
+                    <div style="margin-left: 20px;">
+                        <p><?= $comment['content']; ?></p>
+                        <p class="time"><?= $comment['date']; ?></p>
+                    </div>
                 </div>
-                <div style="margin-left: 20px;">
-                    <p><?= $comment['content']; ?></p>
-                    <p class="time"><?= $comment['date']; ?></p>
-                </div>
-            </div>
-        <?php } ?>
+            <?php } ?>
 
-        <div style="margin-top: 2em" id="comment"></div>
+            <div style="margin-top: 2em" id="comment"></div>
 
-    </div>
-
+        </div>
+    </section>
 </body>
 
 </html>
