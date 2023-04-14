@@ -45,6 +45,16 @@
       border-bottom-right-radius: 16px;
     }
   }
+
+  .boxhv:hover img {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+
+  .boxhv:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
 </style>
 
 <body>
@@ -88,9 +98,9 @@
                           <h6 class="text-muted"><?= $cart[1] ?></h6>
                         </div>
                         <div class="d-flex justify-content-center align-items-center col-md-3 col-lg-3 col-xl-3">
-                          
+
                           <input type="text" class="form-control quantity-input" value="<?= $cart[4] ?>">
-                         
+
                           <!-- <button onclick="minus()" name="minus" class="border border-0"><i class="fa-solid fa-minus"></i></button>
                           <input type="text" class="text-muted text-center border-0" style="width:25%" id="amount" name="amount" value="<?= $cart[4] ?>">
 
@@ -140,7 +150,7 @@
                     <h3 class="fw-bold mb-5 mt-2 pt-1 text-danger">Summary</h3>
                     <hr class="my-4">
 
-                   
+
 
                     <h5 class="text-uppercase mb-3">Give code</h5>
 
@@ -180,9 +190,9 @@
           $hinh = "no photo";
         }
       ?>
-        <form action="index.php?act=addtocart" method="post" class="food-menu-box" style="margin: 30px 0 0 50px">
+        <form action="index.php?act=addtocart" method="post" class="food-menu-box boxhv" style="margin: 30px 0 0 50px">
           <a href="index.php?act=food-detail&id=<?php echo $id; ?>" class="food-menu-img">
-            <img src="<?= $hinh ?>" width="120px" height="120px" class="rounded-4">
+            <img src="<?= $hinh ?>" width="120px" height="120px" class="rounded-4 imghover">
           </a>
 
           <div class="food-menu-desc">
@@ -199,7 +209,8 @@
             <p class="food-price"><?= $price ?> đ</p>
             <p class="food-detail"><?= $description ?></p>
             <br>
-            <button type="submit" name="addtocart" class="btn btn-danger">Add to cart</button>
+            <button type="submit" name="addtocart" class="btn" style="background: linear-gradient(30deg, #fc5c7d, #6a82fb); color: #fff">Add to cart</button>
+
 
           </div>
 
