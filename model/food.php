@@ -33,9 +33,7 @@ function loadall_food($keyword, $category_id)
 
 function loadall_food_home($keyword, $category_id)
 {
-    // $sql = " select * from tbl_food order by id desc";
-    // $listfood = pdo_query($sql);
-    // return $listfood;
+
     $sql = " select * from tbl_food where 1";
     if ($keyword != "") {
         $sql .= " and name like '%" . $keyword . "%'";

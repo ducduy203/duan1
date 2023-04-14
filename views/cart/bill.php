@@ -73,6 +73,10 @@
                             $email = "";
                             $tel = "";
                             $address = "";
+                            echo "<p style='text-align: center; color: red'>Vui lòng đăng nhập để đặt hàng</p>";
+                            // echo '<script>alert("Bạn chưa đăng nhập. Vui lòng đăng nhập để đặt hàng.");</script>';
+                            // header('Location: index.php?act=login');
+                            exit;
                         }
                         ?>
 

@@ -14,6 +14,17 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
     switch ($act) {
         case 'category':
             include 'views/header.php';
+            if (isset($_POST['listok']) && ($_POST['listok'])) {
+                $keyword = $_POST['keyword'];
+                $category_id = $_POST['category_id'];
+            } else {
+                $keyword = '';
+                $category_id = 0;
+            }
+            if (isset($_GET['category_id']) && ($_GET['category_id'] > 0)) {
+                $category_id = $_GET['category_id'];
+            }
+            $listfood = loadall_food_home($keyword, $category_id);
             $listcategory = loadall_category();
             include  "views/categories.php";
             include 'views/footer.php';
@@ -22,12 +33,16 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
 
         case 'food':
             include 'views/header.php';
+
             if (isset($_POST['listok']) && ($_POST['listok'])) {
                 $keyword = $_POST['keyword'];
                 $category_id = $_POST['category_id'];
             } else {
                 $keyword = '';
                 $category_id = 0;
+            }
+            if (isset($_GET['category_id']) && ($_GET['category_id'] > 0)) {
+                $category_id = $_GET['category_id'];
             }
             $listcategory = loadall_category();
             $listfood = loadall_food_home($keyword, $category_id);

@@ -48,8 +48,8 @@
 </style>
 
 <body>
-    <section class="" style="background-color: #d2c9ff; height: 850px">
-        <div class="container h-100" style="padding-top: 50px; width: 60%">
+    <section class="" style="background-color: #d2c9ff">
+        <div class=" container h-100" style="padding-top: 50px; width: 60%">
 
             <div class="modal-dialog">
                 <div class="modal-content">

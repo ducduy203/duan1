@@ -48,14 +48,14 @@
                     } else {
                         $hinh = "no photo";
                     }
-
+                    $linkcate = "index.php?act=food&category_id=" . $id;
                 ?>
                     <div class="col border rounded bg-dark-subtle me-5">
                         <div class="border rounded-circle bg-body mt-4 mb-3">
                             <img src="<?= $hinh ?>" alt="" class="img-responsive m-4" style="width: 62px; height: 70px;">
                         </div>
                         <div class="mb-4">
-                            <a href="" class="text-decoration-none text-black fw-bold fs-5"><?= $categoryname ?></a>
+                            <a href="<?= $linkcate ?>" class="text-decoration-none text-black fw-bold fs-5"><?= $categoryname ?></a>
                         </div>
                     </div>
                 <?php } ?>

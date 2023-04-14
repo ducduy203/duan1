@@ -27,10 +27,10 @@
                     shopping_cart
                 </span>
             </a>
-           
+
             <a href="index.php?act=orderhistory" class="">
-            <span class="material-symbols-outlined text-light mt-2 ms-3">
-                history
+                <span class="material-symbols-outlined text-light mt-2 ms-3">
+                    history
                 </span>
             </a>
             &ensp; &ensp;
@@ -82,7 +82,7 @@
 
         </div>
     </div>
-    <section class="navbar">
+    <section class="navbar" style="position: relative;">
         <div class="container" style="display: grid; grid-template-columns: 1fr 2fr">
             <a href="index.php"><img src="views/images/logo.png" alt="Restaurant Logo" class=""></a>
 
