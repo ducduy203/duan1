@@ -54,7 +54,9 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
             break;
 
         case 'contact':
+            include 'views/header.php';
             include "views/contact.php";
+            include 'views/footer.php';
             break;
 
         case 'register':
@@ -221,7 +223,6 @@ if ((isset($_GET['act'])) && ($_GET['act']) != "") {
         $keyword = '';
         $category_id = 0;
     }
-    $listcategory = loadall_category();
     $listcategory = loadall_category();
     $listfood = loadall_food_home($keyword, $category_id);
     include 'views/home.php';

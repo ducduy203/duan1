@@ -33,6 +33,7 @@ function viewcart()
         <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
           <h6 class="mb-0">' . $cart[5] . '</h6>
         </div>
+        
       </div> ';
     }
 }
@@ -79,15 +80,16 @@ function loadall_cart_count($idbill)
     return sizeof($cart);
 }
 
-function loadall_bill($kyw = "", $id_user = 0)
+function loadall_bill($id_user = 0)
 {
     $sql = "select * from tbl_bill where 1";
     if ($id_user > 0) $sql .= " and id_user=" . $id_user;
-    if ($kyw != "") $sql .= " and id like '%" . $kyw . "%'";
+    // if ($kyw != "") $sql .= " and id like '%" . $kyw . "%'";
     $sql .= " order by id desc";
     $listbill = pdo_query($sql);
     return $listbill;
 }
+
 
 function get_stt_order($n)
 {

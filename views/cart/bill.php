@@ -86,11 +86,11 @@
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input name="tel" type="text" id="typeText" class="form-control form-control-lg" size="17" placeholder="Phone" minlength="19" maxlength="19" value="<?= $tel ?>" />
+                                <input name="tel" type="text" id="typeText" class="form-control form-control-lg" size="17" placeholder="Phone" value="<?= $tel ?>" />
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <input name="address" type="text" id="typeText" class="form-control form-control-lg" size="17" placeholder="Address" minlength="19" maxlength="19" value="<?= $address ?>" />
+                                <input name="address" type="text" id="typeText" class="form-control form-control-lg" size="17" placeholder="Address" value="<?= $address ?>" />
                             </div>
 
                             <div class="" style="margin-top: 20px;">

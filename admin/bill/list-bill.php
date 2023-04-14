@@ -1,9 +1,17 @@
 <div class="main-content">
     <div class="wrapper">
         <h1>List Order</h1>
-
+        <?php
+        $id_user = 0;
+        if (isset($_POST['listok'])) {
+            $keyword = $_POST['kyw'];
+            $id_user = $_POST['id_user'];
+        }
+        ?>
         <form action="index.php?act=listbill" method="post">
-            <input type="text" name="kyw">
+            <input type="text" name="kyw" value="<?php echo $kyw ?>">
+            <input type="hidden" name="category_id" value="<?php echo $category_id ?>">
+
             <input type="submit" name="listtok" id="" value="Search">
         </form>
 

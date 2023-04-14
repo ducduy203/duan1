@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <div class="menu text-center">
+    <div class="menu text-center d-flex">
+        <a href=""><img src="imgs/logo.png" alt=""></a>
+
         <div class="wrapper">
             <ul>
                 <li><a href="index.php">Home</a></li>
