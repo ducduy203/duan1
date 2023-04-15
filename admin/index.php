@@ -200,6 +200,11 @@ if (isset($_GET['act'])) {
             break;
 
         case 'updatebill':
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
             if (isset($_POST['update']) && ($_POST['update'])) {
                 $bill_name = $_POST['bill_name'];
                 $bill_address = $_POST['bill_address'];

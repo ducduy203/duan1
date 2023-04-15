@@ -32,33 +32,33 @@ if (is_array($food)) {
             </div>
             <div>
                 <label class="form-label">Client</label>
-                <input type="text" class="form-control" name="bill_name" disabled value="<?php if (isset($bill_name) && ($bill_name != "")) echo $bill_name; ?>">
-                <input type="text" class="form-control" name="bill_address" disabled value="<?php if (isset($bill_address) && ($bill_address != "")) echo $bill_address; ?>">
-                <input type="text" class="form-control" name="bill_tel" disabled value="<?php if (isset($bill_tel) && ($bill_tel != "")) echo $bill_tel; ?>">
-                <input type="text" class="form-control" name="bill_email" disabled value="<?php if (isset($bill_email) && ($bill_email != "")) echo $bill_email; ?>">
+                <input type="text" class="form-control" name="bill_name" value="<?php if (isset($bill_name) && ($bill_name != "")) echo $bill_name; ?>">
+                <input type="text" class="form-control" name="bill_address" value="<?php if (isset($bill_address) && ($bill_address != "")) echo $bill_address; ?>">
+                <input type="text" class="form-control" name="bill_tel" value="<?php if (isset($bill_tel) && ($bill_tel != "")) echo $bill_tel; ?>">
+                <input type="text" class="form-control" name="bill_email" value="<?php if (isset($bill_email) && ($bill_email != "")) echo $bill_email; ?>">
 
             </div>
             <div>
                 <label class="form-label">Payment Methods</label>
-                <input class="form-control" name="bill_pttt" id="" cols="10" rows="4" disabled value="<?php if (isset($bill_pttt) && ($bill_pttt != "")) echo $bill_pttt; ?>">
+                <input class="form-control" name="bill_pttt" id="" cols="10" rows="4" value="<?php if (isset($bill_pttt) && ($bill_pttt != "")) echo $bill_pttt; ?>">
             </div>
             <div>
                 <label class="form-label">Total bill</label>
-                <input type="text" class="form-control" name="totalbill" disabled value="<?php if (isset($totalbill) && ($totalbill != "")) echo $totalbill; ?>">
+                <input type="text" class="form-control" name="totalbill" value="<?php if (isset($totalbill) && ($totalbill != "")) echo $totalbill; ?>">
             </div>
             <div>
                 <label class="form-label">Order date</label>
-                <input type="text" class="form-control" name="orderdate" disabled value="<?php if (isset($orderdate) && ($orderdate != "")) echo $orderdate; ?>">
+                <input type="text" class="form-control" name="orderdate" value="<?php if (isset($orderdate) && ($orderdate != "")) echo $orderdate; ?>">
             </div>
             <div>
                 <label class="form-label">Order Status</label>
-                <!-- <input type="text" class="form-control" name="order_stt"> -->
-                <select class="form-select" name="" id="">
-                    <option name="order_stt">Đơn hàng mới</option>
+                <input type="text" class="form-control" name="bill_stt" value="<?php if (isset($bill_stt) && ($bill_stt != "")) echo $bill_stt; ?>">
+                <!-- <select class="form-select" name="bill_stt" id="" value="<?php if (isset($bill_stt) && ($bill_stt != "")) echo $bill_stt; ?>">
+                    <option name="bill_stt">Đơn hàng mới</option>
                     <option value="">Đang xử lý</option>
                     <option value="">Đang giao hàng</option>
                     <option value="">Giao thành công</option>
-                </select>
+                </select> -->
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
