@@ -22,8 +22,8 @@
                                 <td><div class="mt-4">' . $category_id . '</div></td>
                                 <td><div class="mt-4">' . $categoryname . '</div></td>
                                 <td><div class="mt-4">' . $countfood . '</div></td>
-                                <td><div class="mt-4">' . $maxprice . '</div></td>
                                 <td><div class="mt-4">' . $minprice . '</div></td>
+                                <td><div class="mt-4">' . $maxprice . '</div></td>
                                 <td><div class="mt-4">' . $avgprice . '</div></td>
                             </tr>';
             }
