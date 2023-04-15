@@ -32,14 +32,8 @@
                 <?php
                 foreach ($listbill as $bill) {
                     extract($bill);
-                    $updatefood = "index.php?act=updatef&id=" . $id;
-                    $deletefood = "index.php?act=deletefood&id=" . $id;
-                    // $hinhpath = "/DUAN1/admin/" . $image;
-                    // if ($image) {
-                    //     $hinh = "<img src='" . $hinhpath . "' height='80'; width='80'>";
-                    // } else {
-                    //     $hinh = "no photo";
-                    // }
+                    $updatebill = "index.php?act=updateb&id=" . $id;
+                    $deletebill = "index.php?act=deletebill&id=" . $id;
                     $client = $bill["bill_name"] . '
                     <br>' . $bill["bill_email"] . '
                     <br>' . $bill["bill_tel"] . '
@@ -56,11 +50,11 @@
                         <td><div class="mt-2">' . $stt_order . '</div></td>
                         <td>
                             <div class="mt-4" style="display: grid; gap: 4px; grid-template-columns: 1fr 1fr">
-                            <a href="' . $updatefood . '">
+                            <a href="' . $updatebill . '">
                                 <input class="btn btn-danger" type="button" value="Update">
                             </a>
-                            <a href="' . $deletefood . '">
-                                <input class="btn btn-danger" onclick="return confirm(`Are you sure?`);" type="button" value="Delete">
+                            <a href="' . $deletebill . '">
+                                <input class="btn btn-danger" onclick="return confirm(`Are you sure?`);" type="button" value="Cancel">
                             </a>
                             </div>
                         </td>

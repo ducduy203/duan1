@@ -67,6 +67,13 @@ function loadone_bill($id)
     return $bill;
 }
 
+function update_bill($id, $bill_name, $bill_address, $bill_tel, $bill_email, $bill_pttt, $totalbill, $orderdate, $bill_stt)
+{
+    $sql = "update tbl_bill set bill_name='" . $bill_name . "', bill_address='" . $bill_address . "', bill_tel='" . $bill_tel . "', bill_email='" . $bill_email . "', bill_pttt='" . $bill_pttt . "', totalbill='" . $totalbill . "', orderdate='" . $orderdate . "', bill_stt='" . $bill_stt . "' where id=" . $id;
+    pdo_execute($sql);
+}
+
+
 function loadall_cart($idbill)
 {
     $sql = "select * from tbl_cart where id_bill=" . $idbill;
@@ -90,6 +97,11 @@ function loadall_bill($id_user = 0)
     return $listbill;
 }
 
+function delete_bill($id)
+{
+    $sql = "delete from tbl_bill where id=" . $id;
+    pdo_execute($sql);
+}
 
 function get_stt_order($n)
 {

@@ -182,6 +182,49 @@ if (isset($_GET['act'])) {
             include "food/manage-food.php";
             break;
 
+        case 'listbill':
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $listbill = loadall_bill($kyw, 0);
+            include "bill/list-bill.php";
+            break;
+
+        case 'updateb':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $food = loadone_bill($_GET['id']);
+            }
+            include "bill/updatebill.php";
+            break;
+
+        case 'updatebill':
+            if (isset($_POST['update']) && ($_POST['update'])) {
+                $bill_name = $_POST['bill_name'];
+                $bill_address = $_POST['bill_address'];
+                $bill_tel = $_POST['bill_tel'];
+                $bill_email = $_POST['bill_email'];
+                $bill_pttt = $_POST['bill_pttt'];
+                $totalbill = $_POST['totalbill'];
+                $orderdate = $_POST['orderdate'];
+                $bill_stt = $_POST['bill_stt'];
+                $id = $_POST['id'];
+
+                update_bill($id, $bill_name, $bill_address, $bill_tel, $bill_email, $bill_pttt, $totalbill, $orderdate, $bill_stt);
+            }
+            $listbill = loadall_bill($kyw, 0);
+            include "bill/list-bill.php";
+            break;
+
+        case 'deletebill':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_bill($_GET['id']);
+            }
+            $listfood = loadall_bill("", 0);
+            include "bill/list-bill.php";
+            break;
+
         case 'listcomment':
             $listcomment = loadall_comment();
             include "comment/list-comment.php";
@@ -193,16 +236,6 @@ if (isset($_GET['act'])) {
             }
             $listcomment = loadall_comment();
             include "comment/list-comment.php";
-            break;
-
-        case 'listbill':
-            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
-                $kyw = $_POST['kyw'];
-            } else {
-                $kyw = "";
-            }
-            $listbill = loadall_bill($kyw, 0);
-            include "bill/list-bill.php";
             break;
 
         case 'satistical':
